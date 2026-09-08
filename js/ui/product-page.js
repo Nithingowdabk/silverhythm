@@ -101,11 +101,72 @@ function setupImageZoom() {
     });
 }
 
+// —— TABS ——
+function setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabName = btn.getAttribute('data-tab');
+            if (!tabName) return;
+
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const panel = document.getElementById('panel-' + tabName);
+            if (panel) panel.classList.add('active');
+        });
+    });
+}
+
 function formatDimensions(str) {
     if (!str) return str;
     return String(str)
         .replace(/\b(\d+(?:\.\d+)?)\s*(?:cms?|centimeters?)\b/gi, '$1 inches')
         .replace(/\b(?:cms?|centimeters?)\b/gi, 'inches');
+}
+
+function getEnrichedDevotionalStory(p, cfg) {
+    const name = p.name || 'Sacred Masterpiece';
+    const rawDesc = p.description ? p.description.trim() : '';
+    
+    // Check if description is generic or brief
+    const isGeneric = !rawDesc || rawDesc.length < 60 || /^silver\s+(photo\s+)?frame$/i.test(rawDesc) || /^pure\s+silver$/i.test(rawDesc);
+    
+    let paragraphs = [];
+    if (!isGeneric) {
+        paragraphs = rawDesc.split(/\n+/).filter(Boolean).map(formatDimensions);
+    }
+    
+    const lowerName = name.toLowerCase();
+    let deityLore = '';
+    
+    if (lowerName.includes('balaji') || lowerName.includes('venkateshwara') || lowerName.includes('tirupati') || lowerName.includes('srinivasa') || lowerName.includes('perumal')) {
+        deityLore = `Hand-chased in pristine 999.9 pure hallmarked silver, this Lord Venkateshwara sanctum masterpiece captures the divine presence of the Supreme Preserver. Consecrated with the celestial conch (Shankha), discus (Chakra), and the Varada and Abhaya mudras, every delicate fold of the divine pitambara and ornate kireetam crown is embossed in profound 3D relief with 24K gold accents.`;
+    } else if (lowerName.includes('ganesh') || lowerName.includes('vinayaka') || lowerName.includes('ganpati')) {
+        deityLore = `Embodying the remover of all obstacles and the harbinger of auspicious beginnings, this Lord Ganesha silver sanctum frame radiates divine wisdom and prosperity. The graceful curvature of the trunk holding the modaka, the protective abhaya hastha, and the celestial halo are chased with microscopic devotion by master temple artisans.`;
+    } else if (lowerName.includes('lakshmi') || lowerName.includes('laxmi') || lowerName.includes('mahalakshmi')) {
+        deityLore = `Radiating eternal grace, spiritual abundance, and auspicious purity, this Goddess Mahalakshmi pure silver frame is an heirloom embodiment of Sri. Handcrafted with traditional lotus iconography, flowing divine drapery, and celestial gold electroplated embellishments, it creates a serene focal point for daily puja.`;
+    } else if (lowerName.includes('shiva') || lowerName.includes('parvathi') || lowerName.includes('kedarnath') || lowerName.includes('linga')) {
+        deityLore = `Reflecting cosmic stillness and transcendent meditation, this sacred Lord Shiva sanctum frame is sculpted in pure 999.9 silver. The celestial crescent moon, the sacred Ganga, and the trident are hand-embossed to evoke meditative peace and sacred harmony in your sacred space.`;
+    } else if (lowerName.includes('krishna') || lowerName.includes('radha') || lowerName.includes('laddu')) {
+        deityLore = `Capturing celestial divine love, joy, and spiritual beauty, this sacred Radha Krishna masterpiece features hand-chased peacock feather motifs, divine flute posture, and radiant 24K gold accents on pure silver.`;
+    } else if (lowerName.includes('hanuman') || lowerName.includes('anjaneya')) {
+        deityLore = `Symbolizing unwavering devotion, courage, and spiritual strength, this Lord Hanuman pure silver frame is crafted with bold, dynamic relief work that radiates protective energy for your home and family.`;
+    } else {
+        deityLore = `Handcrafted by master silversmiths in Bengaluru, this consecrated silver frame represents the highest confluence of Agamic iconography and metallurgical perfection. Each detail is painstakingly chased into pure 999.9 silver, polished to a radiant mirror luster, and sealed for lifetime archival preservation.`;
+    }
+    
+    if (isGeneric) {
+        paragraphs = [
+            deityLore,
+            `Sculpted strictly in accordance with traditional Shilpa Shastra proportions, the frame ensures optimal spiritual vibration and aesthetic balance. Enclosed within an archival protective frame with anti-tarnish microscopic coating, it is designed to be passed down across generations as a revered family heirloom.`
+        ];
+    } else if (paragraphs.length < 2) {
+        paragraphs.push(deityLore);
+    }
+    
+    return paragraphs;
 }
 
 // —— RENDER PRODUCT ——
@@ -417,34 +478,13 @@ function renderProduct(p) {
 
     setupImageZoom();
 
-    // —— CONTINUOUS STORY & MASTERCRAFT SHOWCASE CONTENT ——
+    // —— CONTINUOUS EDITORIAL SHOWCASE CONTENT ——
     const storyText = document.getElementById('storyText');
     if (storyText) {
-        const rawDesc = p.description ? p.description.trim() : '';
-        let descLead = '';
-        let descBody = '';
-
-        if (rawDesc.length > 50) {
-            descLead = formatDimensions(rawDesc);
-            descBody = 'Crafted to immortalise divine serenity in pure 999.9 hallmarked silver, every micro-detail of this sacred deity frame is shaped in strict resonance with traditional canonical Agamic art and Shilpa Shastra principles.';
-        } else {
-            const deityName = p.name || 'Sacred Deity Murti';
-            if (p.brand === 'silverythm') {
-                descLead = `The ${deityName} stands as an eternal conduit of peace and spiritual grace, sculpted in certified 999.9 hallmarked pure silver with radiant 24K gold electroplated accents.`;
-                descBody = `From the sacred crown to the lotus pedestal, our master silversmiths dedicate hours of meditative hand-chasing to achieve astonishing dimensional 3D relief that glows warmly beneath pooja deepam flames.`;
-            } else if (p.brand === 'devaramane') {
-                descLead = `Rooted in authentic temple goldsmithing lineage, the ${deityName} reflects centuries of sacred devotion and auspicious craftsmanship in pure silver.`;
-                descBody = `Created for daily spiritual wear and sacred ceremonies, balancing pure metallurgical integrity with timeless heirloom elegance.`;
-            } else {
-                descLead = `A luxurious symbol of auspicious beginnings and joyous milestones, curated in lustrous pure 999.9 silver coated finish.`;
-                descBody = `Elegantly designed for premium gifting, wedding celebrations, and sacred pooja offerings with bespoke luxury packaging.`;
-            }
-        }
-
-        storyText.innerHTML = `
-          <p class="story-lead">${descLead}</p>
-          <p class="story-body">${descBody}</p>
-        `;
+        const paragraphs = getEnrichedDevotionalStory(p, cfg);
+        storyText.innerHTML = paragraphs
+            .map(l => `<p class="story-para">${l}</p>`)
+            .join('');
     }
 
     const specsGrid = document.getElementById('specsGrid');
@@ -456,51 +496,31 @@ function renderProduct(p) {
         if (p.weight) specRows.push(['Pure Silver Weight', formatDimensions(p.weight)]);
         if (p.dimensions) specRows.push(['Sanctum Dimensions', formatDimensions(p.dimensions)]);
         if (p.category) specRows.push(['Sanctum Deity', p.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())]);
-        if (p.stock !== undefined) specRows.push(['Sanctum Availability', p.stock > 0 ? 'Ready for Dispatch' : 'Custom Crafted to Order']);
+        if (p.stock !== undefined) specRows.push(['Sanctum Availability', p.stock > 0 ? 'Ready for Immediate Dispatch' : 'Custom Crafted to Order']);
 
         specsGrid.innerHTML = specRows
             .map(([k, v]) => `
               <div class="spec-luxury-card">
-                <span class="spec-luxury-label">${k}</span>
-                <strong class="spec-luxury-value">${v}</strong>
+                <div class="slc-header">
+                  <span class="slc-dot">✦</span>
+                  <span class="slc-label">${k}</span>
+                </div>
+                <strong class="slc-value">${v}</strong>
               </div>
             `).join('');
     }
 
     const careGrid = document.getElementById('careGrid');
     if (careGrid) {
-        const careCards = [
-            {
-                title: 'Microfibre Dry Buffing',
-                desc: 'Gently wipe with a soft, clean microfibre or silver-polishing cloth after handling to preserve original shine.',
-                icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="7"/></svg>'
-            },
-            {
-                title: 'Pooja Kumkum & Moisture',
-                desc: 'Avoid prolonged direct contact with wet kumkum, sandalwood paste, or sacred water; pat dry immediately with soft cotton.',
-                icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>'
-            },
-            {
-                title: 'No Chemical Detergents',
-                desc: 'Never use abrasive scrubbers, chemical solvents, or acidic washes; the protective archival lacquer remains self-sustaining.',
-                icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>'
-            },
-            {
-                title: 'Complimentary Atelier Service',
-                desc: 'Silverhythm provides lifetime professional rejuvenation and exchange consultation at our Bengaluru atelier.',
-                icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>'
-            }
-        ];
-
-        careGrid.innerHTML = careCards.map(c => `
-          <div class="care-luxury-card">
-            <div class="care-icon">${c.icon}</div>
-            <div class="care-content">
-              <h4>${c.title}</h4>
-              <p>${c.desc}</p>
-            </div>
-          </div>
-        `).join('');
+        careGrid.innerHTML = cfg.care
+            .map((c, i) => `
+              <div class="care-luxury-card">
+                <div class="clc-num">0${i + 1}</div>
+                <div class="clc-content">
+                  <p class="clc-text">${c}</p>
+                </div>
+              </div>
+            `).join('');
     }
 
     const relatedAllLink = document.getElementById('relatedAllLink');
@@ -647,6 +667,7 @@ async function init() {
     const savedTheme = localStorage.getItem('srTheme');
     document.body.classList.toggle('light', savedTheme !== 'dark');
     setupImageSwitcher();
+    setupTabs();
     Wishlist.init();
 
     try {
