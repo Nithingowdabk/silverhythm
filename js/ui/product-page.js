@@ -489,6 +489,32 @@ function renderProduct(p) {
 
     const specsGrid = document.getElementById('specsGrid');
     if (specsGrid) {
+        const getSpecIconSvg = (key) => {
+            const k = key.toLowerCase();
+            if (k.includes('material') || k.includes('silver') || k.includes('weight')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/><path d="M10 3l-4 6 6 12 6-12-4-6"/></svg>`;
+            }
+            if (k.includes('gold') || k.includes('plating') || k.includes('finish')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+            }
+            if (k.includes('certif') || k.includes('guarantee') || k.includes('hallmark')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`;
+            }
+            if (k.includes('exchange') || k.includes('buyback') || k.includes('return')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>`;
+            }
+            if (k.includes('dimension') || k.includes('size') || k.includes('frame') || k.includes('enclosure')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`;
+            }
+            if (k.includes('origin') || k.includes('brand')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`;
+            }
+            if (k.includes('avail') || k.includes('stock') || k.includes('dispatch')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`;
+            }
+            return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`;
+        };
+
         const specRows = [...cfg.specs];
         if (p.size) specRows.push(['Frame Size', formatDimensions(p.size)]);
         if (p.frame) specRows.push(['Frame Enclosure', formatDimensions(p.frame)]);
@@ -499,15 +525,24 @@ function renderProduct(p) {
         if (p.stock !== undefined) specRows.push(['Sanctum Availability', p.stock > 0 ? 'Ready for Immediate Dispatch' : 'Custom Crafted to Order']);
 
         specsGrid.innerHTML = specRows
-            .map(([k, v]) => `
-              <div class="spec-luxury-card">
-                <div class="slc-header">
-                  <span class="slc-dot">✦</span>
-                  <span class="slc-label">${k}</span>
-                </div>
-                <strong class="slc-value">${v}</strong>
-              </div>
-            `).join('');
+            .map(([k, v]) => {
+                const kLower = k.toLowerCase();
+                const isHighlight = kLower.includes('material') || kLower.includes('gold') || kLower.includes('certif');
+                return `
+                  <div class="spec-luxury-card ${isHighlight ? 'is-highlight' : ''}">
+                    <div class="slc-icon-badge">
+                      ${getSpecIconSvg(k)}
+                    </div>
+                    <div class="slc-body">
+                      <div class="slc-header">
+                        <span class="slc-dot">✦</span>
+                        <span class="slc-label">${k}</span>
+                      </div>
+                      <strong class="slc-value">${v}</strong>
+                    </div>
+                  </div>
+                `;
+            }).join('');
     }
 
     const careGrid = document.getElementById('careGrid');

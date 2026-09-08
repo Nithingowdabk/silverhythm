@@ -1996,51 +1996,299 @@ body.light .prov-sep {
   }
 }
 
-/* ── Section 3: Specifications Matrix ── */
+/* ── Section 3: Atelier Technical Dossier & Metallurgy Showcase ── */
+.specs-showcase-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.specs-visual-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.specs-photo-frame {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-lux), var(--shadow-gold);
+  aspect-ratio: 4 / 3;
+  background: #030B12;
+}
+
+body.light .specs-photo-frame {
+  border-color: rgba(184, 134, 11, 0.3);
+  box-shadow: 0 16px 40px rgba(184, 134, 11, 0.12);
+  background: #FDFBF7;
+}
+
+.specs-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.specs-photo-frame:hover .specs-feature-img {
+  transform: scale(1.03);
+}
+
+.specs-photo-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(4, 15, 24, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  color: #FFFFFF;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.light .specs-photo-badge {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(184, 134, 11, 0.35);
+  color: #8C620A;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Dossier Seal Card */
+.specs-dossier-seal-card {
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-lux);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.light .specs-dossier-seal-card {
+  background: #FFFFFF;
+  border-color: rgba(184, 134, 11, 0.25);
+  box-shadow: 0 10px 28px rgba(27, 73, 99, 0.05);
+}
+
+.specs-dossier-seal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold), transparent);
+}
+
+.sdsc-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sdsc-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body.light .sdsc-icon {
+  background: rgba(184, 134, 11, 0.12);
+  border-color: rgba(184, 134, 11, 0.35);
+  color: #8C620A;
+}
+
+.sdsc-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+body.light .sdsc-title {
+  color: #091C28;
+}
+
+.sdsc-subtitle {
+  font-size: 10.5px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+
+body.light .sdsc-subtitle {
+  color: #8C620A;
+}
+
+.sdsc-text {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 350;
+}
+
+body.light .sdsc-text {
+  color: #4A6070;
+}
+
+.sdsc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.sdsc-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  color: var(--gold);
+}
+
+body.light .sdsc-tag {
+  background: rgba(184, 134, 11, 0.08);
+  border-color: rgba(184, 134, 11, 0.25);
+  color: #8C620A;
+}
+
+/* Right Column Content */
+.specs-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .specs-luxury-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
 .spec-luxury-card {
   padding: 16px 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--surface-card);
   border: 1.5px solid var(--border);
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  transition: all 0.25s ease;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 body.light .spec-luxury-card {
   background: #FFFFFF;
   border-color: rgba(184, 134, 11, 0.2);
+  box-shadow: 0 4px 16px rgba(27, 73, 99, 0.04);
 }
 
 .spec-luxury-card:hover {
   border-color: var(--gold);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(201, 168, 76, 0.18);
+}
+
+body.light .spec-luxury-card:hover {
+  border-color: #B8860B;
+  box-shadow: 0 10px 24px rgba(184, 134, 11, 0.12);
+}
+
+.spec-luxury-card.is-highlight {
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12) 0%, rgba(14, 38, 56, 0.85) 100%);
+  border-color: var(--gold);
+}
+
+body.light .spec-luxury-card.is-highlight {
+  background: linear-gradient(135deg, #FFFDF7 0%, #FBF6E9 100%);
+  border-color: rgba(184, 134, 11, 0.45);
+}
+
+.slc-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.spec-luxury-card:hover .slc-icon-badge {
+  transform: scale(1.08);
+  background: rgba(201, 168, 76, 0.22);
+}
+
+body.light .slc-icon-badge {
+  background: rgba(184, 134, 11, 0.09);
+  border-color: rgba(184, 134, 11, 0.3);
+  color: #8C620A;
+}
+
+.slc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .slc-header {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .slc-dot {
   color: var(--gold);
-  font-size: 9.5px;
+  font-size: 8.5px;
 }
 
 .slc-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body.light .slc-label {
@@ -2048,14 +2296,105 @@ body.light .slc-label {
 }
 
 .slc-value {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 body.light .slc-value {
   color: #091C28;
+}
+
+/* Bespoke Sizing Callout Banner */
+.specs-custom-banner {
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(8, 25, 38, 0.92) 0%, rgba(20, 50, 72, 0.85) 100%);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-lux);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.light .specs-custom-banner {
+  background: linear-gradient(135deg, #FBF8F0 0%, #F5EDE0 100%);
+  border-color: rgba(184, 134, 11, 0.3);
+  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.08);
+}
+
+.scb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.scb-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+body.light .scb-tag {
+  color: #8C620A;
+}
+
+.scb-content h4 {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+body.light .scb-content h4 {
+  color: #091C28;
+}
+
+.scb-content p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+body.light .scb-content p {
+  color: #4A6070;
+}
+
+.scb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F0D489 0%, #C9A84C 100%);
+  color: #04101A;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(201, 168, 76, 0.35);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.scb-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.55);
+}
+
+body.light .scb-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: #FFFFFF;
 }
 
 /* ── Section 4: Sacred Vastu Guidelines & Mandir Sanctuary ── */
@@ -2448,6 +2787,10 @@ body.light .clc-text {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .specs-showcase-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
   .vastu-showcase-split {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -2471,6 +2814,19 @@ body.light .clc-text {
   }
   .prov-step {
     min-width: 95px;
+  }
+  .specs-luxury-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .specs-custom-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .scb-btn {
+    width: 100%;
+    justify-content: center;
   }
   .vastu-luxury-grid {
     grid-template-columns: 1fr;
