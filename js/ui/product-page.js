@@ -130,15 +130,12 @@ function getEnrichedDevotionalStory(p, cfg) {
     const name = p.name || 'Sacred Masterpiece';
     const rawDesc = p.description ? p.description.trim() : '';
     
-    // Check if description is generic or brief
-    const isGeneric = !rawDesc || rawDesc.length < 60 || /^silver\s+(photo\s+)?frame$/i.test(rawDesc) || /^pure\s+silver$/i.test(rawDesc);
-    
     let paragraphs = [];
-    if (!isGeneric) {
+    if (rawDesc) {
         paragraphs = rawDesc.split(/\n+/).filter(Boolean).map(formatDimensions);
     }
     
-    const lowerName = name.toLowerCase();
+    const lowerName = (name + ' ' + (p.category || '')).toLowerCase();
     let deityLore = '';
     
     if (lowerName.includes('balaji') || lowerName.includes('venkateshwara') || lowerName.includes('tirupati') || lowerName.includes('srinivasa') || lowerName.includes('perumal')) {
@@ -157,12 +154,13 @@ function getEnrichedDevotionalStory(p, cfg) {
         deityLore = `Handcrafted by master silversmiths in Bengaluru, this consecrated silver frame represents the highest confluence of Agamic iconography and metallurgical perfection. Each detail is painstakingly chased into pure 999.9 silver, polished to a radiant mirror luster, and sealed for lifetime archival preservation.`;
     }
     
-    if (isGeneric) {
+    if (paragraphs.length === 0) {
         paragraphs = [
             deityLore,
             `Sculpted strictly in accordance with traditional Shilpa Shastra proportions, the frame ensures optimal spiritual vibration and aesthetic balance. Enclosed within an archival protective frame with anti-tarnish microscopic coating, it is designed to be passed down across generations as a revered family heirloom.`
         ];
-    } else if (paragraphs.length < 2) {
+    } else {
+        // Append Agamic deity lore as a complementary rich narrative layer
         paragraphs.push(deityLore);
     }
     
@@ -368,6 +366,19 @@ function renderProduct(p) {
           <div class="detail-price-note">${priceSubText}</div>
         </div>
 
+        <!-- Admin Craftsmanship & Deity Overview Preview -->
+        <div class="detail-overview-box">
+          <div class="dob-header">
+            <span class="dob-gem">✦</span>
+            <span class="dob-title">Sanctum Craftsmanship &amp; Details</span>
+          </div>
+          <p class="dob-desc">${p.description ? formatDimensions(p.description.split(/\n+/)[0]) : 'Handcrafted in pure 999.9 silver with 24K gold accents, consecrated according to traditional Shilpa Shastra proportions.'}</p>
+          <a href="#secStory" class="dob-anchor-link">
+            <span>Read Sacred Lore &amp; Full Specifications</span>
+            <span class="dob-arrow">↓</span>
+          </a>
+        </div>
+
         <!-- 4 Key Highlights Ribbon -->
         <div class="atelier-features-strip">
           <div class="af-item">
@@ -515,14 +526,27 @@ function renderProduct(p) {
             return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`;
         };
 
-        const specRows = [...cfg.specs];
+        const specRows = [];
+        if (p.category) specRows.push(['Sanctum Deity', p.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())]);
+        if (p.material) {
+            specRows.push(['Silver Material', formatDimensions(p.material)]);
+        } else {
+            specRows.push(['Silver Material', p.brand === 'silverythm' ? '999.9 Pure Silver Hallmark' : (p.brand === 'devaramane' ? '92.5 Temple Silver' : '999.9 Silver Coated')]);
+        }
         if (p.size) specRows.push(['Frame Size', formatDimensions(p.size)]);
         if (p.frame) specRows.push(['Frame Enclosure', formatDimensions(p.frame)]);
-        if (p.material) specRows.push(['Silver Material', formatDimensions(p.material)]);
         if (p.weight) specRows.push(['Pure Silver Weight', formatDimensions(p.weight)]);
-        if (p.dimensions) specRows.push(['Sanctum Dimensions', formatDimensions(p.dimensions)]);
-        if (p.category) specRows.push(['Sanctum Deity', p.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())]);
+        if (p.dimensions && (!p.size || p.dimensions !== p.size)) specRows.push(['Sanctum Dimensions', formatDimensions(p.dimensions)]);
         if (p.stock !== undefined) specRows.push(['Sanctum Availability', p.stock > 0 ? 'Ready for Immediate Dispatch' : 'Custom Crafted to Order']);
+
+        // Append baseline brand assurances without duplicating admin fields
+        cfg.specs.forEach(([k, v]) => {
+            const kLower = k.toLowerCase();
+            if (kLower === 'material' && p.material) return;
+            if (kLower === 'brand') return;
+            specRows.push([k, v]);
+        });
+        specRows.push(['Atelier Origin', 'Bengaluru, Karnataka']);
 
         specsGrid.innerHTML = specRows
             .map(([k, v]) => {

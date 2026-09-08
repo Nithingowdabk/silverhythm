@@ -1054,6 +1054,97 @@ body.light .detail-price {
   letter-spacing: 0.01em;
 }
 
+/* ── Admin Craftsmanship & Sanctum Overview Box ── */
+.detail-overview-box {
+  margin: 0 0 20px 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.25s ease;
+}
+
+body.light .detail-overview-box {
+  background: #FAF8F5;
+  border-color: rgba(184, 134, 11, 0.2);
+}
+
+.detail-overview-box:hover {
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.dob-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dob-gem {
+  color: var(--gold);
+  font-size: 11px;
+}
+
+.dob-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+body.light .dob-title {
+  color: #8C620A;
+}
+
+.dob-desc {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.58;
+  color: var(--text);
+  opacity: 0.92;
+  margin: 0;
+}
+
+body.light .dob-desc {
+  color: #1A3444;
+}
+
+.dob-anchor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 3px;
+  width: fit-content;
+}
+
+.dob-anchor-link:hover {
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+body.light .dob-anchor-link:hover {
+  color: #091C28;
+}
+
+.dob-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.dob-anchor-link:hover .dob-arrow {
+  transform: translateY(2px);
+}
+
 /* 4 Key Highlights Ribbon */
 .atelier-features-strip {
   display: grid;
