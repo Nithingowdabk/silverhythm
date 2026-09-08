@@ -977,33 +977,40 @@ async function init() {
             State.set('whatsappNumber', waNumber);
         }
 
-        if (!product || !product.id) {
-            // Fallback product data if offline/mock
+        let liveProduct = product;
+        if (!liveProduct || !liveProduct.id) {
+            try {
+                const catalog = await API.getProducts();
+                if (catalog.products && catalog.products.length > 0) {
+                    liveProduct = catalog.products.find(p => String(p.id) === String(pid)) || catalog.products[0];
+                }
+            } catch (err) {}
+        }
+
+        if (!liveProduct || !liveProduct.id) {
+            // Fallback product data if completely offline
             const fallbackProduct = {
                 id: pid,
                 name: "Lord Balaji Handcrafted Pure Silver Frame",
                 description: "Handcrafted pure 999.9 silver sanctum frame featuring Lord Venkateshwara (Balaji) in intricate traditional detail. 24K electroplated gold highlights over pure silver relief, encased in a bespoke hand-polished rosewood frame.",
                 price: 25000,
-                image: "assets/images/4photoframes.png",
-                images: "[\"assets/images/4photoframes.png\"]",
+                image: "assets/images/silver_hallmark_macro.jpg",
+                images: JSON.stringify(["assets/images/silver_hallmark_macro.jpg", "assets/images/craft_artisan.jpg"]),
                 brand: "silverythm",
                 category: "balaji",
                 weight: "250g Pure Silver",
                 dimensions: "18 x 22 inches",
                 stock: 3,
-                size: "Standard Mandir Scale",
-                frame: "Rosewood Inlay",
-                material: "999.9 Pure Silver Hallmark"
+                size: "18 x 22 inches",
+                frame: "Teakwood Frame with Antique Polish",
+                material: "999.9 Pure Silver Hallmark with 24K Gold Accents"
             };
-            currentProduct = fallbackProduct;
-            renderProduct(fallbackProduct);
-            loadRelated(fallbackProduct);
-            return;
+            liveProduct = fallbackProduct;
         }
 
-        currentProduct = product;
-        renderProduct(product);
-        loadRelated(product);
+        currentProduct = liveProduct;
+        renderProduct(liveProduct);
+        loadRelated(liveProduct);
     } catch (e) {
         console.error("Fetch failed:", e);
         showError("Unable to load product");

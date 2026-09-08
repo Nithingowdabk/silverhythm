@@ -40,7 +40,25 @@ if ($conn->connect_error) {
 // Set charset to utf8mb4 for full Unicode support
 $conn->set_charset("utf8mb4");
 
-// Auto-migration for size, frame, material columns (run safely only if columns are missing)
+// Auto-migration for products table and custom columns
+$conn->query("CREATE TABLE IF NOT EXISTS `products` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `description` TEXT,
+  `price` DECIMAL(10,2) DEFAULT 0.00,
+  `image` VARCHAR(500) DEFAULT '',
+  `images` LONGTEXT DEFAULT NULL,
+  `brand` VARCHAR(50) DEFAULT 'silverythm',
+  `category` VARCHAR(100) DEFAULT '',
+  `weight` VARCHAR(100) DEFAULT '',
+  `dimensions` VARCHAR(100) DEFAULT '',
+  `stock` INT DEFAULT 1,
+  `size` VARCHAR(255) DEFAULT NULL,
+  `frame` VARCHAR(255) DEFAULT NULL,
+  `material` VARCHAR(255) DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+
 $res_size = $conn->query("SHOW COLUMNS FROM `products` LIKE 'size'");
 if ($res_size && $res_size->num_rows === 0) {
     $conn->query("ALTER TABLE products ADD COLUMN size VARCHAR(255) DEFAULT NULL");
