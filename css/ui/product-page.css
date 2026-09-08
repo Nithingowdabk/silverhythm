@@ -3413,20 +3413,80 @@ body.light .site-footer.pp-footer {
    COMPREHENSIVE MOBILE-FRIENDLY RESPONSIVENESS OVERRIDES
    ========================================================= */
 
+/* =========================================================
+   COMPREHENSIVE MOBILE-FRIENDLY RESPONSIVENESS (v34)
+   ========================================================= */
+
+@media (max-width: 992px) {
+  /* Tablet Adaptations */
+  .product-wrap {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 16px 20px 48px;
+  }
+
+  .story-editorial-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .craft-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .specs-showcase-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vastu-showcase-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .reviews-luxury-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .care-luxury-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .coll-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Top Nav on Mobile */
   .top-nav {
     height: 60px;
-    padding: 0 12px;
+    padding: 0 14px;
+    box-sizing: border-box;
+  }
+
+  .nav-actions-desktop {
+    display: none !important;
+  }
+
+  .nav-actions-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
   }
 
   body {
     padding-top: 60px;
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
   .nav-logo {
     height: 28px;
+    max-width: 130px;
   }
 
   .nav-back-btn {
@@ -3435,6 +3495,11 @@ body.light .site-footer.pp-footer {
     padding: 0;
     justify-content: center;
     border-radius: 50%;
+    min-width: 36px;
+  }
+
+  .nav-back-label {
+    display: none !important;
   }
 
   .nav-back-icon {
@@ -3454,6 +3519,7 @@ body.light .site-footer.pp-footer {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .breadcrumb-wrap::-webkit-scrollbar {
@@ -3467,8 +3533,13 @@ body.light .site-footer.pp-footer {
 
   /* Product Hero Showcase */
   .product-wrap {
-    padding: 12px 14px 32px;
-    gap: 20px;
+    padding: 12px 14px 28px;
+    gap: 18px;
+  }
+
+  .img-panel {
+    width: 100%;
+    max-width: 100%;
   }
 
   .img-main {
@@ -3476,6 +3547,7 @@ body.light .site-footer.pp-footer {
     border-radius: 16px;
     max-height: 420px;
     cursor: default;
+    width: 100%;
   }
 
   /* Hide zoom hover hint on touch screens */
@@ -3504,6 +3576,12 @@ body.light .site-footer.pp-footer {
     padding: 2px 1px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .img-thumbs::-webkit-scrollbar {
+    display: none;
   }
 
   .thumb {
@@ -3511,12 +3589,14 @@ body.light .site-footer.pp-footer {
     height: 62px;
     border-radius: 10px;
     scroll-snap-align: start;
+    flex-shrink: 0;
   }
 
   .gallery-ar-btn {
     padding: 12px 14px;
     gap: 10px;
     border-radius: 12px;
+    margin-top: 10px;
   }
 
   .ar-btn-icon {
@@ -3543,6 +3623,8 @@ body.light .site-footer.pp-footer {
     position: static;
     padding: 20px 16px;
     border-radius: 18px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .detail-eyebrow {
@@ -3551,24 +3633,27 @@ body.light .site-footer.pp-footer {
   }
 
   .detail-name {
-    font-size: clamp(1.5rem, 5.5vw, 1.95rem);
-    line-height: 1.2;
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+    line-height: 1.25;
     margin-bottom: 4px;
+    word-break: break-word;
   }
 
   .detail-tagline {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.45;
     margin-bottom: 14px;
   }
 
   .detail-pricing-section {
-    padding: 14px 0;
-    margin-bottom: 16px;
+    padding: 12px 0;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .detail-price {
-    font-size: clamp(1.6rem, 5.2vw, 2.1rem);
+    font-size: clamp(1.55rem, 5vw, 2rem);
   }
 
   .price-hallmark-pill {
@@ -3584,7 +3669,7 @@ body.light .site-footer.pp-footer {
   .atelier-features-strip {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .af-item {
@@ -3606,18 +3691,23 @@ body.light .site-footer.pp-footer {
 
   .cta-stack {
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .btn-primary.btn-whatsapp {
-    padding: 14px 18px;
+    padding: 14px 16px;
     font-size: 11.5px;
     min-height: 48px;
     border-radius: 12px;
+    width: 100%;
+    justify-content: center;
   }
 
   .cta-secondary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
+    width: 100%;
   }
 
   .btn-secondary {
@@ -3627,6 +3717,7 @@ body.light .site-footer.pp-footer {
     border-radius: 10px;
     text-align: center;
     justify-content: center;
+    width: 100%;
   }
 
   .sanctum-assurance-strip {
@@ -3660,144 +3751,502 @@ body.light .site-footer.pp-footer {
     font-size: 10px;
   }
 
-  /* Tabs Section */
-  .tabs-inner-wrap {
-    padding: 0 14px 36px;
+  /* Continuous Editorial Showcase Sections */
+  .story-section {
+    padding: 40px 0;
   }
 
-  .tab-bar {
-    gap: 6px;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+  .story-container {
+    padding: 0 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .tab-btn {
-    padding: 8px 14px;
-    font-size: 10px;
-    scroll-snap-align: start;
-    flex-shrink: 0;
+  .section-header-center {
+    margin-bottom: 24px;
+    text-align: center;
   }
 
-  .desc-text {
+  .sec-eyebrow {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+  }
+
+  .sec-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .sec-subtitle {
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  /* Section 1: Sacred Story */
+  .story-editorial-split {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .story-photo-frame {
+    aspect-ratio: 16 / 11;
+    width: 100%;
+    max-height: 280px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
+
+  .story-photo-badge {
+    bottom: 10px;
+    left: 10px;
+    font-size: 8px;
+    padding: 4px 10px;
+    max-width: calc(100% - 20px);
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .story-quote-card {
+    padding: 14px 16px;
+    border-radius: 0 14px 14px 0;
+    margin-bottom: 8px;
+  }
+
+  .quote-gem {
+    font-size: 28px;
+  }
+
+  .quote-text {
     font-size: 13.5px;
-    line-height: 1.7;
+    line-height: 1.5;
   }
 
-  .desc-para {
-    margin-bottom: 10px;
-  }
-
-  .specs-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .spec-card {
-    padding: 12px 14px;
-    border-radius: 10px;
-  }
-
-  .spec-card-label {
+  .quote-author {
     font-size: 9.5px;
   }
 
-  .spec-card-value {
-    font-size: 12.5px;
+  .story-text-wrap .story-para {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 10px;
   }
 
-  .vastu-guide-card {
-    padding: 18px 14px;
-    border-radius: 14px;
-  }
-
-  .vastu-title {
-    font-size: 16px;
-    margin-bottom: 14px;
-  }
-
-  .vastu-tips-grid {
-    grid-template-columns: 1fr;
+  .story-highlights-sidebar {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-  }
-
-  .vastu-tip {
-    padding: 12px;
-    gap: 10px;
-    border-radius: 10px;
-  }
-
-  .vastu-tip strong {
-    font-size: 12px;
-  }
-
-  .vastu-tip p {
-    font-size: 11.5px;
-  }
-
-  .care-list {
-    gap: 10px;
-  }
-
-  .care-list li {
-    font-size: 12.5px;
-    gap: 8px;
-  }
-
-  .reviews-wrap {
-    gap: 14px;
-  }
-
-  .reviews-summary-badge {
-    padding: 12px 14px;
-    border-radius: 12px;
     width: 100%;
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  .sh-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .sh-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .sh-content strong {
+    font-size: 12px;
+  }
+
+  .sh-content p {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  /* Section 2: Craft Bento & Provenance */
+  .craft-bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .craft-bento-feature {
+    border-radius: 16px;
+  }
+
+  .cbf-img-wrap {
+    min-height: 240px;
+    height: 260px;
+  }
+
+  .cbf-overlay {
+    padding: 18px 14px 14px;
+    gap: 6px;
+  }
+
+  .cbf-title {
+    font-size: 16px;
+  }
+
+  .cbf-desc {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .craft-bento-side {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
-  .review-card {
-    padding: 14px;
-    border-radius: 12px;
-    gap: 8px;
+  .craft-pillar-card {
+    padding: 16px 14px;
+    border-radius: 14px;
   }
 
-  .review-quote {
+  .cp-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .cp-title {
+    font-size: 15px;
+  }
+
+  .cp-desc {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .provenance-strip {
+    padding: 12px 14px;
+    gap: 8px;
+    border-radius: 14px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .prov-step {
+    min-width: 85px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .prov-num {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .prov-step strong {
+    font-size: 10.5px;
+  }
+
+  .prov-step small {
+    font-size: 8.5px;
+  }
+
+  .prov-sep {
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* Section 3: Specifications & Technical Dossier */
+  .specs-showcase-split {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .specs-visual-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .specs-photo-frame {
+    aspect-ratio: 16 / 11;
+    width: 100%;
+    max-height: 260px;
+    border-radius: 16px;
+  }
+
+  .specs-photo-badge {
+    bottom: 10px;
+    left: 10px;
+    font-size: 8px;
+    padding: 4px 10px;
+    max-width: calc(100% - 20px);
+    line-height: 1.3;
+  }
+
+  .specs-dossier-seal-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .sdsc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .sdsc-title {
+    font-size: 15px;
+  }
+
+  .sdsc-subtitle {
+    font-size: 9.5px;
+  }
+
+  .sdsc-text {
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .sdsc-tags {
+    gap: 6px;
+  }
+
+  .sdsc-tag {
+    font-size: 8.5px;
+    padding: 3px 8px;
+  }
+
+  .specs-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .specs-luxury-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .spec-luxury-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+
+  .slc-icon-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .slc-label {
+    font-size: 8.5px;
+  }
+
+  .slc-value {
+    font-size: 12px;
+  }
+
+  .specs-custom-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .scb-content h4 {
+    font-size: 15px;
+  }
+
+  .scb-content p {
+    font-size: 11px;
+  }
+
+  .scb-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 10.5px;
+  }
+
+  /* Section 4: Vastu Guidelines */
+  .vastu-showcase-split {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .vastu-visual-column {
+    width: 100%;
+  }
+
+  .vastu-photo-card {
+    aspect-ratio: 16 / 11;
+    width: 100%;
+    max-height: 260px;
+    border-radius: 16px;
+  }
+
+  .vastu-photo-badge {
+    top: 10px;
+    left: 10px;
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+
+  .vastu-photo-footer {
+    padding: 10px 12px;
+    font-size: 10.5px;
+  }
+
+  .vastu-luxury-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .vastu-card {
+    padding: 14px 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .vc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .vc-content h4 {
     font-size: 13.5px;
+  }
+
+  .vc-content p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* Section 5: Devotee Testimonials */
+  .reviews-showcase-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .reviews-rating-hero {
+    padding: 18px 14px;
+    border-radius: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rrh-score {
+    font-size: 28px;
+  }
+
+  .rrh-text {
+    font-size: 11px;
+  }
+
+  .reviews-luxury-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .review-luxury-card {
+    padding: 14px 14px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .rlc-quote {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .rlc-author strong {
+    font-size: 11px;
+  }
+
+  .rlc-author small {
+    font-size: 9.5px;
+  }
+
+  /* Section 6: Heirloom Care */
+  .care-luxury-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .care-luxury-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    gap: 10px;
+  }
+
+  .clc-num {
+    font-size: 12px;
+    padding: 4px 7px;
+  }
+
+  .clc-text {
+    font-size: 11.5px;
+    line-height: 1.5;
   }
 
   /* Related Products */
   .related-section {
-    padding: 32px 0 48px;
+    padding: 32px 0 44px;
   }
 
   .related-inner {
     padding: 0 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .related-header {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .related-eyebrow {
-    font-size: 9.5px;
+    font-size: 9px;
   }
 
   .related-title {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .related-all {
-    font-size: 10px;
+    font-size: 9.5px;
   }
 
   .related-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    width: 100%;
   }
 
   .rc {
@@ -3813,11 +4262,11 @@ body.light .site-footer.pp-footer {
 
   .rc-body {
     padding: 10px;
-    gap: 3px;
+    gap: 2px;
   }
 
   .rc-name {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.25;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -3826,20 +4275,21 @@ body.light .site-footer.pp-footer {
   }
 
   .rc-price {
-    font-size: 12px;
+    font-size: 11.5px;
   }
 
   .rc-meta-item {
-    font-size: 9px;
+    font-size: 8.5px;
   }
 
-  /* Mobile Bottom Fixed Nav */
+  /* Mobile Bottom Fixed Navigation */
   #bottom-nav {
     display: flex;
-    height: calc(58px + env(safe-area-inset-bottom, 0px));
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
     padding: 6px 10px max(env(safe-area-inset-bottom, 6px), 6px);
     z-index: 250;
-    gap: 4px;
+    gap: 6px;
+    box-sizing: border-box;
   }
 
   .bn {
@@ -3859,18 +4309,23 @@ body.light .site-footer.pp-footer {
     font-weight: 700;
     max-width: none;
     flex: 1;
-    margin-left: 4px;
+    margin-left: 2px;
   }
 
   /* Footer on Mobile */
   .site-footer.pp-footer {
-    padding: 32px 0 24px;
+    padding: 28px 0 20px;
+  }
+
+  .coll-footer-rule {
+    padding: 0 14px;
+    margin-bottom: 24px;
   }
 
   .coll-footer-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 14px 28px;
+    gap: 20px;
+    padding: 0 14px 20px;
     text-align: center;
   }
 
@@ -3880,6 +4335,7 @@ body.light .site-footer.pp-footer {
 
   .coll-footer-tagline {
     max-width: none;
+    font-size: 11.5px;
   }
 
   .coll-footer-col {
@@ -3889,19 +4345,33 @@ body.light .site-footer.pp-footer {
   .coll-footer-bottom {
     flex-direction: column;
     text-align: center;
-    padding: 18px 14px 0;
-    gap: 8px;
+    padding: 14px 14px 0;
+    gap: 6px;
   }
 }
 
-/* Extra Small Screens (<= 360px) */
+/* Extra Small Mobile Screens (<= 360px) */
 @media (max-width: 360px) {
+  .top-nav {
+    padding: 0 10px;
+  }
+
+  .nav-logo {
+    height: 24px;
+  }
+
   .atelier-features-strip {
     grid-template-columns: 1fr;
   }
+
   .cta-secondary-row {
     grid-template-columns: 1fr;
   }
+
+  .sanctum-assurance-strip {
+    grid-template-columns: 1fr;
+  }
+
   .related-grid {
     grid-template-columns: 1fr;
   }
