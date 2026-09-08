@@ -253,11 +253,10 @@ export const Collections = {
                 const waFab = document.getElementById('wa-fab');
                 if (waFab) waFab.href = 'https://wa.me/' + waNum;
             }
-        } catch (e) { console.warn('Failed to load settings'); }
-
-        try {
+          try {
             const { products } = await API.getProducts(brand);
             allProducts = products;
+            this.renderCategoryChips(allProducts);
             this.render(allProducts);
 
             // Fix: Listen for wishlist updates to ensure hearts render correctly 
@@ -268,71 +267,139 @@ export const Collections = {
             });
         } catch (e) {
             const grid = document.getElementById('grid');
-            if (grid) grid.innerHTML = '<div class="grid-empty"><p>Unable to load collection.</p></div>';
+            if (grid) grid.innerHTML = '<div class="grid-empty"><div class="ge-icon">✦</div><h3>Unable to load collection</h3><p>Please check your connection or try again shortly.</p></div>';
         }
     },
 
+    renderCategoryChips(products) {
+        const chipsRow = document.querySelector('.chips-row');
+        if (!chipsRow) return;
+
+        const categories = Array.from(new Set(products.map(p => p.category).filter(Boolean)));
+        let html = `<button class="chip active" data-cat="all">All Pieces</button>`;
+        categories.forEach(cat => {
+            const formatted = cat.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            html += `<button class="chip" data-cat="${cat}">${formatted}</button>`;
+        });
+        chipsRow.innerHTML = html;
+    },
+
     render(products) {
-        const waNumber = this.waNumber || '916364051237';   // ← ADD THIS LINE
-        const isSilverythmPage = brand === 'silverythm';        // ← ADD THIS LINE (brand is already module-level var)
+        const waNumber = this.waNumber || '916364051237';
+        const isSilverythmPage = brand === 'silverythm';
 
         const heroCount = document.getElementById('heroCount');
         if (heroCount) heroCount.textContent = products.length;
         
         const grid = document.getElementById('grid');
         const cnt = document.getElementById('filterCount');
-        if (cnt) cnt.textContent = products.length + ' item' + (products.length === 1 ? '' : 's');
+        if (cnt) cnt.textContent = `${products.length} Masterpiece${products.length === 1 ? '' : 's'}`;
 
         if (!grid) return;
 
         if (!products.length) {
-            grid.innerHTML = '<div class="grid-empty"><p>Nothing in this category yet.</p></div>';
+            grid.innerHTML = `
+              <div class="grid-empty">
+                <div class="ge-icon">✦</div>
+                <h3>No Sacred Offerings in this Category</h3>
+                <p>Explore all available sanctum masterpieces or request a bespoke commission from our Bengaluru atelier.</p>
+                <button class="btn-reset-filters" type="button" id="resetCatBtn">View All Pieces</button>
+              </div>
+            `;
+            const resetBtn = document.getElementById('resetCatBtn');
+            if (resetBtn) resetBtn.addEventListener('click', () => this.filter('all'));
             return;
         }
 
         grid.innerHTML = products.map((p, i) => {
             const isSilverythmProduct = p.brand === 'silverythm';
-            const price = isSilverythmProduct
-                ? (p.price && p.price > 0 ? '₹' + Number(String(p.price).replace(/,/g, '')).toLocaleString('en-IN') : 'By Consultation')
-                : (p.price && p.price > 0 ? '₹' + Number(String(p.price).replace(/,/g, '')).toLocaleString('en-IN') : 'Enquire');
+            const priceNum = p.price ? Number(String(p.price).replace(/,/g, '')) : 0;
+            const price = priceNum
+                ? '₹' + priceNum.toLocaleString('en-IN')
+                : (isSilverythmProduct ? 'By Consultation' : 'Enquire');
             const wished = this.isWished(p.id);
 
-            const waText = encodeURIComponent(`Hi, I'm interested in "${p.name}". Could you share more details?\n${window.location.origin}/product.html?id=${p.id}`);
+            const currentUrl = `${window.location.origin}/product.html?id=${p.id}`;
+            const waText = encodeURIComponent(
+                `Namaste Silverhythm! 🙏\n\nI am interested in the ${p.name}${priceNum ? ` (${price})` : ''}.\nCould you please share customisation options, sanctum dimensions, and availability?\n\nProduct Link: ${currentUrl}`
+            );
             const waHref = `https://wa.me/${waNumber}?text=${waText}`;
 
+            const brandBadgeText = isSilverythmProduct
+                ? '999.9 PURE SILVER'
+                : (p.brand === 'devaramane' ? '92.5 TEMPLE SILVER' : '999.9 SILVER COATED');
+
             const actionBtn = isSilverythmProduct
-                ? `<a href="${waHref}" target="_blank" rel="noopener noreferrer" class="btn-add btn-enquire">
-                    Enquire
+                ? `<a href="${waHref}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-enquire">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    <span>Enquire</span>
                    </a>`
-                : `<button class="btn-add">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                : `<button class="btn-card-action btn-add" type="button">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                       <line x1="3" y1="6" x2="21" y2="6"/>
                       <path d="M16 10a4 4 0 0 1-8 0"/>
                     </svg>
-                    Add to Cart
+                    <span>Add to Bag</span>
                    </button>`;
 
+            const categoryFormatted = p.category
+                ? p.category.replace(/-/g, ' ').toUpperCase()
+                : 'SACRED SANCTUM';
+
             return `
-<div class="product-card" data-pid="${p.id}">
-  <div class="card-img">
-    <img src="${p.image}" alt="${p.name}" loading="lazy">
-    <button class="wish-btn ${wished ? 'wishlisted' : ''}"
-            data-wish-id="${p.id}"
-            aria-label="Wishlist">
-      <svg width="13" height="13" viewBox="0 0 24 24"
-           fill="${wished ? 'currentColor' : 'none'}"
-           stroke="currentColor" stroke-width="2">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    </button>
+<div class="product-card ${isSilverythmProduct ? 'card-silverythm' : ''}" data-pid="${p.id}" style="--delay: ${i * 0.04}s">
+  <div class="card-media-wrap">
+    <div class="card-img" role="button" tabindex="0" aria-label="View ${p.name}">
+      <img src="${p.image}" alt="${p.name}" loading="lazy">
+      
+      <!-- Floating Purity / Brand Badge -->
+      <div class="card-purity-badge">
+        <span class="cpb-sparkle">✦</span>
+        <span>${brandBadgeText}</span>
+      </div>
+
+      <!-- Floating Glass Wishlist Button -->
+      <button class="wish-btn ${wished ? 'wishlisted' : ''}"
+              data-wish-id="${p.id}"
+              aria-label="Wishlist"
+              type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24"
+             fill="${wished ? 'currentColor' : 'none'}"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </button>
+    </div>
   </div>
+
   <div class="card-body">
-    <div class="card-name">${p.name}</div>
-    <div class="card-price">${price}</div>
-    <div class="card-actions">
+    <div class="card-meta">
+      <span class="card-category">✦ ${categoryFormatted}</span>
+      ${p.size ? `<span class="card-meta-dot">·</span><span class="card-size">${p.size}</span>` : ''}
+    </div>
+
+    <h3 class="card-name" title="${p.name}">${p.name}</h3>
+
+    <div class="card-pricing-row">
+      <div class="card-price">${price}</div>
+      <span class="card-hallmark-tag">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>BIS 999.9</span>
+      </span>
+    </div>
+
+    <div class="card-actions-row">
       ${actionBtn}
-      <button class="btn-view">View →</button>
+      <button class="btn-card-inspect btn-view" type="button" aria-label="View Details of ${p.name}">
+        <span>Details</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 </div>`;
@@ -348,7 +415,6 @@ export const Collections = {
                     this.classList.add('hidden');
                 }, { once: true });
             }
-            card.style.setProperty('--delay', `${i * 0.05}s`);
         });
     },
 
@@ -356,6 +422,7 @@ export const Collections = {
         document.querySelectorAll('.chip').forEach(b =>
             b.classList.toggle('active', b.dataset.cat === cat));
         this.render(cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat));
+    },'all' ? allProducts : allProducts.filter(p => p.category === cat));
     },
 
     addCart(id) {
