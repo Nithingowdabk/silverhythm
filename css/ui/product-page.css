@@ -742,6 +742,8 @@ body.light .ar-btn-arrow {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .gallery-action-btn {
@@ -3561,6 +3563,92 @@ body.light .site-footer.pp-footer {
 
   .ar-btn-arrow {
     font-size: 15px;
+  }
+
+  /* Side by Side Action Buttons below Photo on Mobile */
+  .gallery-highlight-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .gallery-action-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    padding: 10px 8px !important;
+    border-radius: 12px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .gah-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    min-width: 0 !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .gah-icon {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .gah-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .gah-text {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .gah-text strong {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.2 !important;
+    display: block !important;
+  }
+
+  .gah-text small {
+    font-size: 8px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.15 !important;
+    display: block !important;
+  }
+
+  .gah-badge {
+    font-size: 7px !important;
+    font-weight: 800 !important;
+    padding: 2px 5px !important;
+    border-radius: 999px !important;
+    letter-spacing: 0.02em !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .gah-arrow {
+    font-size: 12px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
 
   /* Detail Panel */
