@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonical" href="https://silverhythm.com/product.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Product | Silverhythm</title>
+  <meta name="description" content="Product details from Silverhythm, Devaramane, and Udugore. Explore handcrafted offerings and curated gifts.">
+  <meta property="og:title" content="Product | Silverhythm">
+  <meta property="og:description" content="Product details from Silverhythm, Devaramane, and Udugore. Explore handcrafted offerings and curated gifts.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://silverhythm.com/product.html">
+  <meta property="og:image" content="https://silverhythm.com/assets/Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product | Silverhythm">
+  <meta name="twitter:description" content="Product details from Silverhythm, Devaramane, and Udugore. Explore handcrafted offerings and curated gifts.">
+  <meta name="twitter:image" content="https://silverhythm.com/assets/Logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/ui/fabs.css?v=2">
+  <link rel="stylesheet" href="css/ui/drawers.css?v=2">
+  <link rel="stylesheet" href="css/ui/utilities.css?v=2">
+  <link rel="stylesheet" href="css/ui/wall-preview.css?v=3">
+  <link rel="stylesheet" href="css/ui/enquiry-bot.css?v=1">
+  <link rel="stylesheet" href="css/ui/product-page.css?v=30">
+  <link rel="icon" href="/assets/Logo.png" type="image/png">
+  <script type="application/ld+json" id="product-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Product Name",
+    "description": "Product description",
+    "brand": { "@type": "Brand", "name": "Silverhythm" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": "0",
+      "availability": "https://schema.org/InStock",
+      "seller": { "@type": "Organization", "name": "Silverhythm" }
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+
+  <!-- Top nav -->
+  <nav class="top-nav" id="topNav">
+    <button class="nav-back-btn" id="backBtn" aria-label="Go back">
+      <span class="nav-back-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </span>
+      <span class="nav-back-label">Back</span>
+    </button>
+
+    <div class="nav-logo-container">
+      <a href="index.html" class="nav-logo-link" aria-label="Silverhythm Home">
+        <img src="assets/Logo.png" alt="Silverhythm" class="nav-logo" id="navLogo">
+      </a>
+    </div>
+
+    <div class="nav-actions-desktop">
+      <div class="nav-search-bar" id="desktopSearchBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="desktopSearchInput" placeholder="Search deity frames..." autocomplete="off">
+        <span class="search-kbd-hint">⌘K</span>
+      </div>
+      <button class="nav-icon-btn" id="wishBtnDesktop" aria-label="Wishlist">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="nav-icon-btn relative" id="bagBtnDesktop" aria-label="Bag">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span id="bag-count-desktop"></span>
+      </button>
+    </div>
+
+    <div class="nav-actions-mobile">
+      <button class="nav-mobile-btn" id="bnSearchBtn" aria-label="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-mobile-btn" id="wishBtnMobile" aria-label="Wishlist">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="nav-mobile-btn relative" id="bagBtnMobile" aria-label="Bag">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-mobile-badge" id="bag-count-mobile"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-wrap">
+    <div class="breadcrumb" id="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">/</span>
+      <span id="bcCollection">Collection</span>
+      <span class="bc-sep">/</span>
+      <span id="bcProduct" class="bc-current">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Product Hero section — skeleton until loaded -->
+  <div class="product-wrap" id="productWrap">
+    <div class="img-panel">
+      <div class="skeleton aspect-1-1"></div>
+      <div class="flex-gap-8 mt-12">
+        <div class="skeleton sk-thumb"></div>
+        <div class="skeleton sk-thumb"></div>
+        <div class="skeleton sk-thumb"></div>
+      </div>
+    </div>
+    <div class="detail-panel">
+      <div class="skeleton sk-text-sm w-120 mb-18"></div>
+      <div class="skeleton sk-text-lg w-85p mb-10"></div>
+      <div class="skeleton sk-text-lg w-60p mb-20"></div>
+      <div class="skeleton sk-text-md w-44p mb-24"></div>
+      <div class="skeleton sk-btn-lg mb-10"></div>
+      <div id="productWishContainer"></div>
+      <div class="skeleton sk-btn-md mb-24"></div>
+      <div class="skeleton sk-block-lg"></div>
+    </div>
+  </div>
+
+  <!-- Continuous Stacked Story & Mastercraft Showcase (Hidden until loaded) -->
+  <div class="story-showcase-container hidden" id="storyShowcase">
+    
+    <!-- 1. The Sacred Story & Deity Legacy Section -->
+    <section class="story-section story-section-story" id="secStory">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ SACRED ICONOGRAPHY &amp; DEVOTION</span>
+          <h2 class="sec-title">The Sacred Legacy &amp; Divine Form</h2>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="story-editorial-grid">
+          <div class="story-editorial-main">
+            <div class="story-text-wrap" id="storyText">
+              <!-- Dynamically Populated -->
+            </div>
+            <div class="story-quote-card">
+              <span class="quote-gem">“</span>
+              <p class="quote-text">Every deity frame is created not merely as art, but as a consecrated spiritual presence that infuses your home mandir with eternal peace and divine grace.</p>
+              <span class="quote-author">✦ Master Silversmith Atelier · Bengaluru</span>
+            </div>
+          </div>
+
+          <div class="story-highlights-sidebar">
+            <div class="sh-card">
+              <div class="sh-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="sh-content">
+                <strong>Shilpa Shastra Proportions</strong>
+                <p>Sculpted strictly according to canonical temple geometry and Agamic deity measurements.</p>
+              </div>
+            </div>
+
+            <div class="sh-card">
+              <div class="sh-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <div class="sh-content">
+                <strong>Consecration Ready</strong>
+                <p>Handcrafted in a meditative, prayerful artisan space, ready for your home pooja pratishta.</p>
+              </div>
+            </div>
+
+            <div class="sh-card">
+              <div class="sh-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                  <circle cx="12" cy="12" r="3.5"/>
+                </svg>
+              </div>
+              <div class="sh-content">
+                <strong>Archival Anti-Tarnish Protection</strong>
+                <p>Protected by a microscopic archival seal to ensure mirror brilliance across generations of worship.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Mastercraft & 999.9 Silver Metallurgy Section -->
+    <section class="story-section story-section-craft" id="secCraft">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ MASTER ATELIER SILVERSMITHING</span>
+          <h2 class="sec-title">Centuries of Silversmith Heritage</h2>
+          <p class="sec-subtitle">Three signature pillars of artisanal purity and technique that define every Silverhythm masterpiece.</p>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="craft-pillars-grid">
+          <div class="craft-pillar-card">
+            <div class="cp-badge">✦ METALLURGICAL PURITY</div>
+            <div class="cp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l4 6-10 12L2 9z"/>
+                <path d="M2 9h20M10 3l2 6 2-6M7 9l5 12 5-12"/>
+              </svg>
+            </div>
+            <h3 class="cp-title">999.9 Pure Hallmarked Silver</h3>
+            <p class="cp-desc">Assayed and hallmarked for absolute metallurgical purity. Guaranteed free from alloys, maintaining pure sanctum sanctity with an authentic lifetime weight guarantee certificate.</p>
+          </div>
+
+          <div class="craft-pillar-card">
+            <div class="cp-badge">✦ 100% HAND-CHASED</div>
+            <div class="cp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="cp-title">High-Relief 3D Micro-Chasing</h3>
+            <p class="cp-desc">Traditional temple silversmiths use specialized hand-chasing tools to sculpt delicate contours into the pure silver sheet, creating multidimensional depth that reflects sacred oil lamp light.</p>
+          </div>
+
+          <div class="craft-pillar-card">
+            <div class="cp-badge">✦ 24K GOLD ACCENTS</div>
+            <div class="cp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              </svg>
+            </div>
+            <h3 class="cp-title">24K Gold Electroplated Accents</h3>
+            <p class="cp-desc">Sacred deity crowns, ornaments, and holy halos are selectively electroplated in genuine 24-carat gold, establishing a breathtaking contrast between lustrous pure silver and royal gold.</p>
+          </div>
+        </div>
+
+        <!-- Provenance Timeline Ribbon -->
+        <div class="provenance-strip">
+          <div class="prov-step">
+            <span class="prov-num">01</span>
+            <strong>Silver Assay</strong>
+            <small>999.9 Purity Verified</small>
+          </div>
+          <div class="prov-sep">→</div>
+          <div class="prov-step">
+            <span class="prov-num">02</span>
+            <strong>Shilpa Geometry</strong>
+            <small>Agamic Proportions Drawn</small>
+          </div>
+          <div class="prov-sep">→</div>
+          <div class="prov-step">
+            <span class="prov-num">03</span>
+            <strong>Master Chasing</strong>
+            <small>Devotional 3D Relief</small>
+          </div>
+          <div class="prov-sep">→</div>
+          <div class="prov-step">
+            <span class="prov-num">04</span>
+            <strong>24K Gold Plating</strong>
+            <small>Crown &amp; Halo Accents</small>
+          </div>
+          <div class="prov-sep">→</div>
+          <div class="prov-step">
+            <span class="prov-num">05</span>
+            <strong>Sanctum Enclosure</strong>
+            <small>Archival Teakwood Frame</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Sanctum Specifications Matrix Section -->
+    <section class="story-section story-section-specs" id="secSpecs">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ ATELIER PARAMETERS</span>
+          <h2 class="sec-title">Specifications &amp; Sanctum Dimensions</h2>
+          <p class="sec-subtitle">Comprehensive metallurgical details and customisation parameters.</p>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="specs-luxury-grid" id="specsGrid">
+          <!-- Dynamically Populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Sacred Vastu & Mandir Placement Guide Section -->
+    <section class="story-section story-section-vastu" id="secVastu">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ HOME MANDIR PLACEMENT</span>
+          <h2 class="sec-title">Sacred Vastu Guidelines for Auspicious Energy</h2>
+          <p class="sec-subtitle">Ensure optimal spiritual resonance, harmony, and positive cosmic flow in your sanctuary.</p>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="vastu-luxury-grid">
+          <div class="vastu-card">
+            <div class="vc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+            </div>
+            <div class="vc-content">
+              <h4>Auspicious Cardinal Direction</h4>
+              <p>Mount on the <strong>East or North wall</strong> of your sacred pooja room to welcome the morning sun's divine prana and activate positive cosmic vibration.</p>
+            </div>
+          </div>
+
+          <div class="vastu-card">
+            <div class="vc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20M12 2v20"/>
+                <circle cx="12" cy="12" r="7"/>
+              </svg>
+            </div>
+            <div class="vc-content">
+              <h4>Ideal Eye-Level Height</h4>
+              <p>Mount the center of the frame at approximately <strong>4.5 to 5.5 feet</strong> from the floor, ensuring the deity's sacred eyes meet your gaze during prayer and dhyana.</p>
+            </div>
+          </div>
+
+          <div class="vastu-card">
+            <div class="vc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2c.5 2.5 3 4.5 3 7a3 3 0 0 1-6 0c0-2.5 2.5-4.5 3-7z"/>
+                <path d="M4 17h16a4 4 0 0 1-8 3 4 4 0 0 1-8-3z"/>
+              </svg>
+            </div>
+            <div class="vc-content">
+              <h4>Deepam &amp; Illumination</h4>
+              <p>Light a brass or pure silver deepam to the deity's left (your right). Warm spotlighting highlights the 24K electroplated gold accents on pure silver.</p>
+            </div>
+          </div>
+
+          <div class="vastu-card">
+            <div class="vc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div class="vc-content">
+              <h4>Sanctum Harmony &amp; Rituals</h4>
+              <p>Pair harmoniously with traditional silver kalasha, bell, and holy panchamrit vessels. Ideal for daily archana, morning prayers, and festive pujas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Devotee Experiences & Verified Reviews Section -->
+    <section class="story-section story-section-reviews" id="secReviews">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ DEVOTEE TESTIMONIALS</span>
+          <h2 class="sec-title">Consecrated in Homes Across the World</h2>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="reviews-showcase-wrap">
+          <div class="reviews-rating-hero">
+            <div class="rrh-score">4.9<span>/5.0</span></div>
+            <div class="rrh-stars">★★★★★</div>
+            <p class="rrh-text">Based on 120+ verified sacred deity frame acquisitions</p>
+            <div class="rrh-hallmark-badge">✦ 100% Verified Devotee Reviews</div>
+          </div>
+
+          <div class="reviews-luxury-grid">
+            <div class="review-luxury-card">
+              <div class="rlc-header">
+                <div class="rlc-stars">★★★★★</div>
+                <span class="rlc-badge">✦ Verified Acquisition</span>
+              </div>
+              <p class="rlc-quote">"The craftsmanship of the pure silver Balaji frame exceeded our expectations. When illuminated with our pooja oil lamps, the divine aura in our mandir is truly breathtaking."</p>
+              <div class="rlc-author">
+                <strong>Anand &amp; Meera R.</strong>
+                <small>Jayanagar, Bengaluru · Consecrated July 2026</small>
+              </div>
+            </div>
+
+            <div class="review-luxury-card">
+              <div class="rlc-header">
+                <div class="rlc-stars">★★★★★</div>
+                <span class="rlc-badge">✦ Verified Acquisition</span>
+              </div>
+              <p class="rlc-quote">"The 999.9 purity hallmark certificate and the exquisite teakwood frame enclosure make it a cherished family heirloom. The custom sizing support from their temple architect was top-tier."</p>
+              <div class="rlc-author">
+                <strong>Dr. S. K. Venkatesh</strong>
+                <small>Banjara Hills, Hyderabad · Consecrated August 2026</small>
+              </div>
+            </div>
+
+            <div class="review-luxury-card">
+              <div class="rlc-header">
+                <div class="rlc-stars">★★★★★</div>
+                <span class="rlc-badge">✦ Verified Acquisition</span>
+              </div>
+              <p class="rlc-quote">"Ordered for our new home Gruhapravesham pooja. The 24K gold relief work on pure silver is majestic and the transit packaging was completely flawless."</p>
+              <div class="rlc-author">
+                <strong>Pooja &amp; Raghavendra Rao</strong>
+                <small>Indiranagar, Bengaluru · Consecrated June 2026</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Heirloom Care & Preservation Guide Section -->
+    <section class="story-section story-section-care" id="secCare">
+      <div class="story-container">
+        <div class="section-header-center">
+          <span class="sec-eyebrow">✦ HEIRLOOM CARE GUIDE</span>
+          <h2 class="sec-title">Preserving Your Sacred Silver Masterpiece</h2>
+          <p class="sec-subtitle">Guidelines to maintain eternal shine, sanctity, and protective luster for decades.</p>
+          <div class="sec-gold-line"></div>
+        </div>
+
+        <div class="care-luxury-grid" id="careGrid">
+          <!-- Dynamically Populated -->
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Related products — hidden until loaded -->
+  <div class="related-section hidden" id="relatedSection">
+    <div class="related-inner">
+      <div class="related-header">
+        <div>
+          <span class="related-eyebrow">✦ SACRED ATELIER</span>
+          <h3 class="related-title">You May Also Seek</h3>
+        </div>
+        <a href="#" class="related-all" id="relatedAllLink">View Full Collection →</a>
+      </div>
+      <div class="related-grid" id="relatedGrid"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-wrap"></div>
+
+
+  <!-- Bottom nav — truly fixed at bottom -->
+  <nav id="bottom-nav">
+    <button class="bn" id="bnShareBtn" aria-label="Share">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span>Share</span>
+    </button>
+    <button class="bn" id="bnWishBtn" aria-label="Wishlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span>Wishlist</span>
+    </button>
+    <button class="bn-cta" id="bagBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Add to Bag
+      <span id="bag-count"></span>
+    </button>
+  </nav>
+
+  <!-- Full-Screen Search Modal -->
+  <div id="search-modal" class="search-modal">
+    <div class="search-header">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search for products...">
+      <button id="closeSearchBtn" aria-label="Close search">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <footer class="site-footer pp-footer">
+    <div class="coll-footer-rule"><span class="cfr-line"></span><span class="cfr-diamond">◆</span><span class="cfr-line"></span></div>
+    <div class="coll-footer-grid">
+      <div class="coll-footer-brand">
+        <a href="index.html" class="coll-footer-logo-link"><img src="assets/Logo.png" alt="Logo" class="coll-footer-logo" id="footerLogo"></a>
+        <p class="coll-footer-tagline">Handcrafted with devotion. Delivered with care. Every piece a quiet conversation between devotion and design.</p>
+      </div>
+      <div class="coll-footer-col">
+        <h4 class="coll-footer-col-title">Collections</h4>
+        <a href="silverythm-collections.html" class="coll-footer-link">Silverhythm</a>
+        <a href="devaramane-collections.html" class="coll-footer-link">Devaramane</a>
+        <a href="udugore-collections.html" class="coll-footer-link">Udugore</a>
+      </div>
+      <div class="coll-footer-col">
+        <h4 class="coll-footer-col-title">Support</h4>
+        <a href="about.html" class="coll-footer-link">About Us</a>
+        <a href="https://wa.me/916364051237" target="_blank" class="coll-footer-link">WhatsApp Us</a>
+        <a href="index.html" class="coll-footer-link">Home</a>
+      </div>
+    </div>
+    <div class="coll-footer-bottom">
+      <span class="coll-footer-copy">© 2026 Silverhythm · Handcrafted in India</span>
+      <div class="coll-footer-legal"><a href="#" class="coll-footer-legal-link">Terms</a><span class="coll-footer-sep">·</span><a href="#" class="coll-footer-legal-link">Privacy</a></div>
+    </div>
+  </footer>
+
+
+  <div id="modal-root"></div>
+  <script type="module" src="js/ui/product-page.js?v=30"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,12 @@
+.env
+scratch/
+*.ps1
+/uploads/*
+!uploads/.gitkeep
+*.log
+node_modules/
+.DS_Store
+Thumbs.db
+.trash/
+public_html (1)/
+

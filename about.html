@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://silverhythm.com/about.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Silverhythm — Where Devotion Meets Design</title>
+    <meta name="description" content="Learn the Silverhythm story, heritage, and design-led craft behind our sacred silver creations.">
+    <meta property="og:title" content="Our Story | Silverhythm">
+    <meta property="og:description" content="Learn the Silverhythm story, heritage, and design-led craft behind our sacred silver creations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silverhythm.com/about.html">
+    <meta property="og:image" content="https://silverhythm.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Story | Silverhythm">
+    <meta name="twitter:description" content="Learn the Silverhythm story, heritage, and design-led craft behind our sacred silver creations.">
+    <meta name="twitter:image" content="https://silverhythm.com/assets/Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/assets/Logo.png" type="image/png">
+    <link rel="stylesheet" href="css/ui/about.css?v=2">
+    <link rel="stylesheet" href="css/ui/fabs.css?v=2">
+    <link rel="stylesheet" href="css/ui/nav.css?v=2">
+    <link rel="stylesheet" href="css/ui/drawers.css?v=2">
+    <link rel="stylesheet" href="css/ui/utilities.css?v=2">
+    <link rel="stylesheet" href="css/ui/enquiry-bot.css?v=1">
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="progress"></div>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo"><img src="assets/Logo.png" alt="Silverhythm"></a>
+        <div class="nav-links">
+            <a href="index.html?brand=silverythm">Shop</a>
+            <a href="silverythm-collections.html">Collection</a>
+            <a href="index.html#contact-section">Enquire</a>
+        </div>
+    </nav>
+
+    <!-- ═ ═ ═ ═  CH1 HERO ═ ═ ═ ═  -->
+    <section class="chapter" id="ch1">
+        <div id="ch1-bg"></div>
+        <div id="ch1-mid"></div>
+        <canvas id="ch1-dust"></canvas>
+        <div id="ch1-overlay"></div>
+        <div id="ch1-content">
+            <div class="hero-eyebrow">Silverhythm · Our Story</div>
+            <h1 id="hero-title"></h1>
+            <div class="hero-rule" id="hero-rule"></div>
+            <div class="hero-sub">Bengaluru · Since the 1980s</div>
+        </div>
+        <div class="scroll-cue">
+            <div class="scroll-cue-line"></div>
+            <div class="scroll-cue-label">Scroll</div>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH2 THE GAP ═ ═ ═ ═  -->
+    <section class="chapter" id="ch2">
+        <canvas id="ch2-canvas"></canvas>
+        <div id="ch2-ghost"></div>
+
+        <!--
+    DIYA SVG — FIXED v3
+    Proper shallow bowl shape using quadratic bezier curves.
+    Wick rises from bowl center. Flame is a clean teardrop.
+    Spout curves left from the bowl rim.
+    All paths use fill="none" to prevent SVG default black fill.
+  -->
+        <svg id="ch2-diya" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="about-diya">
+            <!-- Bowl body: wide shallow half-ellipse with organic curves -->
+            <path class="svg-draw"
+                d="M20 160 Q18 210 100 225 Q182 210 180 160 Q170 130 150 122 Q130 116 100 115 Q70 116 50 122 Q30 130 20 160Z"
+                stroke="#C9A87C" stroke-width="1.2" fill="none" />
+            <!-- Spout / beak curving left from bowl rim -->
+            <path class="svg-draw" d="M20 160 Q5 148 8 138 Q14 126 30 130" stroke="#C9A87C" stroke-width="1" fill="none"
+                opacity="0.8" />
+            <!-- Oil surface shimmer inside bowl -->
+            <path class="svg-draw" d="M45 150 Q100 158 155 150" stroke="#C9A87C" stroke-width="0.6" fill="none"
+                opacity="0.4" />
+            <!-- Wick stem rising from bowl center -->
+            <path class="svg-draw" d="M100 115 L100 85" stroke="#C9A87C" stroke-width="1.2" fill="none" opacity="0.7" />
+            <!-- Flame outer: classic teardrop, wider base, pointed tip -->
+            <path class="svg-draw" d="M100 85 C90 70 86 54 100 40 C114 54 110 70 100 85Z" stroke="#C8D8E8"
+                stroke-width="1.4" fill="none" />
+            <!-- Flame inner: tighter teardrop for depth -->
+            <path class="svg-draw" d="M100 80 C94 68 92 56 100 48 C108 56 106 68 100 80Z" stroke="#C8D8E8"
+                stroke-width="0.7" fill="none" opacity="0.5" />
+            <!-- Base shadow ellipse -->
+            <ellipse class="svg-draw" cx="100" cy="230" rx="55" ry="7" stroke="#C9A87C" stroke-width="0.8" fill="none"
+                opacity="0.35" />
+        </svg>
+
+        <div id="ch2-content">
+            <div class="gap-word gap-word-1" id="gw1">The
+                silver was there.</div>
+            <div class="gap-word gap-word-2 mt-12" id="gw2">The devotion was
+                there.</div>
+            <div class="gap-word mt-24" id="gw3">
+                <span class="gap-accent">But the thoughtfulness</span>
+                <span class="gap-word-3-span">—
+                    was missing.</span>
+            </div>
+            <div class="gap-rule" id="gap-rule"></div>
+            <div class="gap-tagline" id="gap-tagline">That observation — made by an architect — became the founding
+                impulse of Silverhythm.</div>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH3 ORIGIN STORY ═ ═ ═ ═  -->
+    <section id="ch3">
+
+        <!--
+    CH3 COMPASS — FIXED v3
+    Proper 4-needle compass rose. Each needle is a filled diamond (4 points).
+    N needle: bright (0.85 opacity). S/E/W: dim (0.28 opacity).
+    Diamond coords computed as: tip → shoulder-left → base → shoulder-right.
+    Cardinal dot markers at ring edges.
+  -->
+        <svg id="ch3-compass" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="about-compass-main">
+            <!-- Concentric rings -->
+            <circle class="svg-draw" cx="160" cy="160" r="148" stroke="#C9A87C" stroke-width="0.8" />
+            <circle class="svg-draw" cx="160" cy="160" r="128" stroke="#C9A87C" stroke-width="0.5"
+                stroke-dasharray="3,8" />
+            <circle class="svg-draw" cx="160" cy="160" r="100" stroke="#C9A87C" stroke-width="0.4"
+                stroke-dasharray="1,6" />
+            <!-- Cardinal cross -->
+            <line class="svg-draw" x1="160" y1="12" x2="160" y2="308" stroke="#C9A87C" stroke-width="0.6" />
+            <line class="svg-draw" x1="12" y1="160" x2="308" y2="160" stroke="#C9A87C" stroke-width="0.6" />
+            <!-- Diagonal lines -->
+            <line class="svg-draw" x1="55" y1="55" x2="265" y2="265" stroke="#C9A87C" stroke-width="0.4"
+                opacity="0.5" />
+            <line class="svg-draw" x1="265" y1="55" x2="55" y2="265" stroke="#C9A87C" stroke-width="0.4"
+                opacity="0.5" />
+            <!-- N needle — diamond: tip(160,72) → L-shoulder(152,116) → base-notch(160,132) → R-shoulder(168,116) -->
+            <path class="svg-draw" d="M160 72 L152 116 L160 132 L168 116 Z" fill="#C9A87C" stroke="none"
+                opacity="0.85" />
+            <!-- S needle — mirror of N -->
+            <path class="svg-draw" d="M160 248 L152 204 L160 188 L168 204 Z" fill="#C9A87C" stroke="none"
+                opacity="0.28" />
+            <!-- W needle — rotated 90Ã‚° -->
+            <path class="svg-draw" d="M72 160 L116 152 L132 160 L116 168 Z" fill="#C9A87C" stroke="none"
+                opacity="0.28" />
+            <!-- E needle — mirror of W -->
+            <path class="svg-draw" d="M248 160 L204 152 L188 160 L204 168 Z" fill="#C9A87C" stroke="none"
+                opacity="0.28" />
+            <!-- Center ring + dot -->
+            <circle class="svg-draw" cx="160" cy="160" r="10" stroke="#C9A87C" stroke-width="1.2" fill="none" />
+            <circle class="svg-draw" cx="160" cy="160" r="3.5" fill="#C9A87C" opacity="0.9" />
+            <!-- Cardinal edge dots -->
+            <circle class="svg-draw" cx="160" cy="12" r="3" fill="#C9A87C" opacity="0.55" />
+            <circle class="svg-draw" cx="160" cy="308" r="3" fill="#C9A87C" opacity="0.28" />
+            <circle class="svg-draw" cx="12" cy="160" r="3" fill="#C9A87C" opacity="0.28" />
+            <circle class="svg-draw" cx="308" cy="160" r="3" fill="#C9A87C" opacity="0.28" />
+        </svg>
+
+        <div class="story-grid">
+            <div>
+                <div class="story-eyebrow reveal-item">The Origin</div>
+                <h2 class="story-h2 reveal-item">"An architect<br>walked into a room."</h2>
+                <p class="story-body reveal-item">As an architect, I have spent my career understanding how spaces speak
+                    — how proportion, material, and light can quietly shape the way a person feels. That understanding
+                    never left me when I walked into a room with a silver god photograph on the wall.</p>
+                <blockquote class="story-pullquote reveal-item">"So many of these frames, however sacred their subject,
+                    were made without real design intent. That gap is what Silverhythm was created to fill."
+                </blockquote>
+                <p class="story-body reveal-item">Founded by Vandana Priya, an architect by profession, Silverhythm was
+                    born from the conviction that sacred art deserves the same rigour and intention as any great design.
+                    Her trained eye for structure, proportion, and detail has transformed the traditional silver god
+                    frame into something richer.</p>
+                <p class="story-body reveal-item">What makes Silverhythm distinctive is the rare combination of design
+                    vision and deep manufacturing expertise. Vandana's father has run a dedicated manufacturing unit
+                    since the 1980s, bringing decades of precision craftsmanship to every product.</p>
+            </div>
+            <div>
+                <div class="founder-card reveal-item">
+                    <div class="fc-overline">The Founder</div>
+                    <div class="fc-name">Vandana Priya</div>
+                    <div class="fc-role">Architect · Founder, Silverhythm</div>
+                    <div class="fc-rule"></div>
+                    <div class="fc-quote">"Her trained eye for structure, proportion, and detail has transformed the
+                        traditional silver god frame into something richer — a piece that belongs as naturally in a
+                        thoughtfully curated home as it does in a revered pooja room."</div>
+                    <div class="stat-grid">
+                        <div>
+                            <div class="stat-num">999.9</div>
+                            <div class="stat-label">Pure Silver</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">1980s</div>
+                            <div class="stat-label">Est. Legacy</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">5000</div>
+                            <div class="stat-label">Pieces Crafted</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">900,000</div>
+                            <div class="stat-label">Families Served</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH4 THE CRAFT ═ ═ ═ ═  -->
+    <section id="ch4">
+        <!-- Scroll-linked frame SVG — paths start fully hidden, JS drives strokeDashoffset -->
+        <svg id="ch4-svg-stage" viewBox="0 0 480 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="svg-draw" d="M40 560 L40 180 Q40 40 240 20 Q440 40 440 180 L440 560" stroke="#C9A87C"
+                stroke-width="2" fill="none" />
+            <path class="svg-draw" d="M70 560 L70 188 Q70 80 240 62 Q410 80 410 188 L410 560" stroke="#C9A87C"
+                stroke-width="1" fill="none" opacity="0.5" />
+            <path class="svg-draw" d="M240 20 L240 4 M228 14 L240 4 L252 14" stroke="#C9A87C" stroke-width="1.5"
+                fill="none" />
+            <path class="svg-draw" d="M40 200 L70 200 M440 200 L410 200" stroke="#C9A87C" stroke-width="1" fill="none"
+                opacity="0.4" />
+            <path class="svg-draw" d="M40 240 L70 240 M440 240 L410 240" stroke="#C9A87C" stroke-width="1" fill="none"
+                opacity="0.3" />
+            <path class="svg-draw" d="M240 140 L260 168 L240 196 L220 168 Z" stroke="#C8D8E8" stroke-width="1.5"
+                fill="none" opacity="0.6" />
+            <circle class="svg-draw" cx="240" cy="168" r="8" stroke="#C8D8E8" stroke-width="1" fill="none"
+                opacity="0.4" />
+            <line class="svg-draw" x1="90" y1="260" x2="390" y2="260" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.3" />
+            <line class="svg-draw" x1="90" y1="300" x2="390" y2="300" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.25" />
+            <line class="svg-draw" x1="90" y1="340" x2="390" y2="340" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.2" />
+            <line class="svg-draw" x1="90" y1="380" x2="390" y2="380" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.2" />
+            <line class="svg-draw" x1="90" y1="420" x2="390" y2="420" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.2" />
+            <line class="svg-draw" x1="90" y1="460" x2="390" y2="460" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.2" />
+            <line class="svg-draw" x1="90" y1="500" x2="390" y2="500" stroke="#C9A87C" stroke-width="0.5"
+                opacity="0.2" />
+            <rect class="svg-draw" x="24" y="552" width="432" height="6" rx="3" fill="#C9A87C" opacity="0.3" />
+        </svg>
+
+        <div class="craft-grid">
+            <div>
+                <div class="craft-eyebrow reveal-item">The Craft</div>
+                <h2 class="craft-h2 reveal-item">"Decades of craft, passed down through every mould."</h2>
+                <p class="craft-body reveal-item">I grew up watching my father run his manufacturing unit with a quiet
+                    obsessiveness about quality. Decades of experience, passed down through every mould, every polish,
+                    every piece that left his workshop. When I brought my architectural training into that process,
+                    something shifted.</p>
+                <p class="craft-body reveal-item">We use 999.9 pure silver — the highest purity available — ensuring
+                    that each creation is not only beautiful, but enduring. Every photograph, every frame, every finish
+                    is held to a standard that honours the divine subjects it represents.</p>
+            </div>
+            <div class="relative-box">
+                <div class="pillar-list">
+                    <div class="pillar-item reveal-item">
+                        <div class="pi-icon"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <polyline points="9 12 11 14 15 10" />
+                            </svg></div>
+                        <div>
+                            <div class="pi-title">999.9 Pure Silver</div>
+                            <div class="pi-desc">Tested for absolute purity. Unmatched quality.</div>
+                        </div>
+                    </div>
+                    <div class="pillar-item reveal-item">
+                        <div class="pi-icon"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg></div>
+                        <div>
+                            <div class="pi-title">Legacy Since 1980s</div>
+                            <div class="pi-desc">Manufacturing mastery spanning generations.</div>
+                        </div>
+                    </div>
+                    <div class="pillar-item reveal-item">
+                        <div class="pi-icon"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M2 12 Q12 2 22 12 Q12 22 2 12" />
+                            </svg></div>
+                        <div>
+                            <div class="pi-title">Design-Led Vision</div>
+                            <div class="pi-desc">Architectural sensibility in every detail.</div>
+                        </div>
+                    </div>
+                    <div class="pillar-item reveal-item">
+                        <div class="pi-icon"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                            </svg></div>
+                        <div>
+                            <div class="pi-title">Custom Orders</div>
+                            <div class="pi-desc">Bespoke and walk-in options available.</div>
+                        </div>
+                    </div>
+                    <div class="pillar-item reveal-item">
+                        <div class="pi-icon"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg></div>
+                        <div>
+                            <div class="pi-title">Hand-Chased Detail</div>
+                            <div class="pi-desc">Every frame finished by master silversmiths.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH5 FOUNDER LETTER ═ ═ ═ ═  -->
+    <section id="ch5">
+
+        <!--
+    CH5 COMPASS — FIXED v3
+    Smaller version of CH3 compass. Same diamond needle logic.
+    Added third dashed ring for more visual depth.
+    Diagonal lines at 45Ã‚° added.
+    N dot marker added at top.
+  -->
+        <svg id="ch5-compass" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="about-compass-mini">
+            <circle class="svg-draw" cx="120" cy="120" r="110" stroke="#C9A87C" stroke-width="1" />
+            <circle class="svg-draw" cx="120" cy="120" r="96" stroke="#C9A87C" stroke-width="0.5"
+                stroke-dasharray="4,6" />
+            <circle class="svg-draw" cx="120" cy="120" r="72" stroke="#C9A87C" stroke-width="0.4" stroke-dasharray="1,5"
+                opacity="0.6" />
+            <line class="svg-draw" x1="120" y1="10" x2="120" y2="230" stroke="#C9A87C" stroke-width="0.6" />
+            <line class="svg-draw" x1="10" y1="120" x2="230" y2="120" stroke="#C9A87C" stroke-width="0.6" />
+            <line class="svg-draw" x1="35" y1="35" x2="205" y2="205" stroke="#C9A87C" stroke-width="0.3"
+                opacity="0.4" />
+            <line class="svg-draw" x1="205" y1="35" x2="35" y2="205" stroke="#C9A87C" stroke-width="0.3"
+                opacity="0.4" />
+            <!-- N needle: tip(120,50) → L(113,87) → base(120,100) → R(127,87) -->
+            <path class="svg-draw" d="M120 50 L113 87 L120 100 L127 87 Z" fill="#C9A87C" stroke="none" opacity="0.85" />
+            <!-- S needle -->
+            <path class="svg-draw" d="M120 190 L113 153 L120 140 L127 153 Z" fill="#C9A87C" stroke="none"
+                opacity="0.28" />
+            <!-- W needle -->
+            <path class="svg-draw" d="M50 120 L87 113 L100 120 L87 127 Z" fill="#C9A87C" stroke="none" opacity="0.28" />
+            <!-- E needle -->
+            <path class="svg-draw" d="M190 120 L153 113 L140 120 L153 127 Z" fill="#C9A87C" stroke="none"
+                opacity="0.28" />
+            <!-- Center -->
+            <circle class="svg-draw" cx="120" cy="120" r="8" stroke="#C9A87C" stroke-width="1.2" fill="none" />
+            <circle class="svg-draw" cx="120" cy="120" r="3" fill="#C9A87C" />
+            <!-- N top dot marker -->
+            <circle class="svg-draw" cx="120" cy="10" r="2.5" fill="#C9A87C" opacity="0.55" />
+        </svg>
+
+        <div class="letter-wrap">
+            <div class="letter-eyebrow reveal-item">Founder's Note</div>
+            <div class="letter-name reveal-item">Vandana Priya</div>
+            <div class="letter-role reveal-item">Architect · Founder, Silverhythm · Bengaluru</div>
+            <div class="letter-divider reveal-item" id="letter-div"></div>
+            <p class="letter-para drop-cap reveal-item">As an architect, I have spent my career understanding how spaces
+                speak — how proportion, material, and light can quietly shape the way a person feels. That
+                understanding
+                never left me when I walked into a room with a silver god photograph on the wall. I noticed that so many
+                of these frames, however sacred their subject, were made without real design intent. The silver was
+                there. The devotion was there. But the thoughtfulness — the sense that every element had been
+                considered
+                — was often missing. That gap is what Silverhythm was created to fill.</p>
+            <p class="letter-para reveal-item">I grew up watching my father run his manufacturing unit with a quiet
+                obsessiveness about quality. Decades of experience, passed down through every mould, every polish, every
+                piece that left his workshop. When I brought my architectural training into that process, something
+                shifted. The objects we began to create were different — rooted in tradition but shaped by design.</p>
+            <p class="letter-para reveal-item">At Silverhythm, devotion is not just expressed — it is designed. Every
+                frame is considered from the first sketch to the final finish. We ask: does this serve the deity it
+                holds? Does it elevate the space it enters? Does it feel worthy of being passed down? Over the past ten
+                years, I have had the privilege of seeing our pieces find their place in homes, mandirs, and hearts
+                across Bengaluru and beyond. Each one is a reminder of why this work matters. Thank you for trusting us
+                with your sacred spaces. We do not take that lightly.</p>
+            <div class="sig-wrap reveal-item">
+                <svg width="200" height="50" viewBox="0 0 200 50" fill="none" class="about-svg-sig">
+                    <path id="sig-path" d="M10 25 C30 12 50 10 75 22 C100 34 125 38 150 24 C168 14 182 16 190 25"
+                        stroke="rgba(200,216,232,0.25)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+                </svg>
+                <div class="sig-name">— Vandana Priya</div>
+                <div class="sig-role">Founder, Silverhythm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH6 VISION ═ ═ ═ ═  -->
+    <section class="chapter" id="ch6">
+        <canvas id="vision-canvas"></canvas>
+
+        <!--
+    CH6 MANDALA — FIXED v3
+    Clean geometric mandala: 7 concentric rings + 4 axis lines + 8 lotus petals
+    (ellipses rotated at 0Ã‚°/45Ã‚°/90Ã‚°/135Ã‚° Ãƒ— 2 sides) + inner octagon star.
+    NO filled arrow paths inside — those looked like squashed triangles.
+    Petals use <ellipse transform="rotate(angle cx cy)"> for perfect symmetry.
+    Cardinal tick marks at outer ring for finishing detail.
+  -->
+        <svg id="ch6-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="about-mandala">
+            <!-- Concentric rings: alternating silver / gold -->
+            <circle class="svg-draw" cx="200" cy="200" r="188" stroke="#C8D8E8" stroke-width="0.6" />
+            <circle class="svg-draw" cx="200" cy="200" r="168" stroke="#C9A87C" stroke-width="0.8" />
+            <circle class="svg-draw" cx="200" cy="200" r="144" stroke="#C8D8E8" stroke-width="0.5"
+                stroke-dasharray="2,7" />
+            <circle class="svg-draw" cx="200" cy="200" r="118" stroke="#C9A87C" stroke-width="0.6" />
+            <circle class="svg-draw" cx="200" cy="200" r="88" stroke="#C8D8E8" stroke-width="0.5"
+                stroke-dasharray="1,5" />
+            <circle class="svg-draw" cx="200" cy="200" r="58" stroke="#C9A87C" stroke-width="0.8" />
+            <circle class="svg-draw" cx="200" cy="200" r="28" stroke="#C8D8E8" stroke-width="0.6" />
+            <circle class="svg-draw" cx="200" cy="200" r="10" stroke="#C9A87C" stroke-width="0.8" fill="none" />
+            <!-- 4 axis lines -->
+            <line class="svg-draw" x1="200" y1="12" x2="200" y2="388" stroke="#C9A87C" stroke-width="0.4"
+                opacity="0.5" />
+            <line class="svg-draw" x1="12" y1="200" x2="388" y2="200" stroke="#C9A87C" stroke-width="0.4"
+                opacity="0.5" />
+            <line class="svg-draw" x1="67" y1="67" x2="333" y2="333" stroke="#C9A87C" stroke-width="0.3"
+                opacity="0.35" />
+            <line class="svg-draw" x1="333" y1="67" x2="67" y2="333" stroke="#C9A87C" stroke-width="0.3"
+                opacity="0.35" />
+            <!-- 8 lotus petals — ellipses centered on the r=88 ring, pointing outward -->
+            <!-- N petal (pointing up, no rotation needed) -->
+            <ellipse class="svg-draw" cx="200" cy="144" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" />
+            <!-- S petal -->
+            <ellipse class="svg-draw" cx="200" cy="256" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" />
+            <!-- E petal (horizontal) -->
+            <ellipse class="svg-draw" cx="256" cy="200" rx="24" ry="15" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" />
+            <!-- W petal -->
+            <ellipse class="svg-draw" cx="144" cy="200" rx="24" ry="15" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" />
+            <!-- NE petal: center at 45Ã‚° from (200,200) at r=88: (200+62,200-62)=(262,138), rotated 45Ã‚° -->
+            <ellipse class="svg-draw" cx="262" cy="138" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" transform="rotate(45 262 138)" />
+            <!-- SE petal -->
+            <ellipse class="svg-draw" cx="262" cy="262" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" transform="rotate(-45 262 262)" />
+            <!-- SW petal -->
+            <ellipse class="svg-draw" cx="138" cy="262" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" transform="rotate(45 138 262)" />
+            <!-- NW petal -->
+            <ellipse class="svg-draw" cx="138" cy="138" rx="15" ry="24" stroke="#C8D8E8" stroke-width="0.7" fill="none"
+                opacity="0.7" transform="rotate(-45 138 138)" />
+            <!-- Inner 8-point star: octagon polygon at r=20 from center -->
+            <polygon class="svg-draw" points="200,172 213,187 228,200 213,213 200,228 187,213 172,200 187,187"
+                stroke="#C9A87C" stroke-width="0.8" fill="none" opacity="0.8" />
+            <!-- Center dot -->
+            <circle cx="200" cy="200" r="3" fill="#C9A87C" opacity="0.7" />
+            <!-- Cardinal tick marks on outer ring -->
+            <line class="svg-draw" x1="200" y1="8" x2="200" y2="20" stroke="#C9A87C" stroke-width="1.2" opacity="0.6" />
+            <line class="svg-draw" x1="200" y1="380" x2="200" y2="392" stroke="#C9A87C" stroke-width="1.2"
+                opacity="0.6" />
+            <line class="svg-draw" x1="8" y1="200" x2="20" y2="200" stroke="#C9A87C" stroke-width="1.2" opacity="0.6" />
+            <line class="svg-draw" x1="380" y1="200" x2="392" y2="200" stroke="#C9A87C" stroke-width="1.2"
+                opacity="0.6" />
+        </svg>
+
+        <div class="vision-content">
+            <div class="vision-eyebrow reveal-item">Our Vision</div>
+            <blockquote class="vision-quote reveal-item">"To be a leading name in divine silver artistry — known for
+                seamlessly blending tradition with thoughtful design, unmatched craftsmanship, and a customer experience
+                worthy of the sacred."</blockquote>
+            <div class="about-divider-small reveal-item"></div>
+            <p class="vision-sub reveal-item">"Every piece at Silverhythm is more than a product — it is a symbol of
+                faith, a mark of tradition, and a quiet statement of elegance."</p>
+        </div>
+    </section>
+
+    <!-- ═ ═ ═ ═  CH7 CTA ═ ═ ═ ═  -->
+    <section class="chapter" id="ch7">
+        <div class="cta-content">
+            <svg id="ch7-ornament" viewBox="0 0 500 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="about-svg-ornament">
+                <line class="svg-draw" x1="0" y1="20" x2="210" y2="20" stroke="#C9A87C" stroke-width="0.8" />
+                <line class="svg-draw" x1="290" y1="20" x2="500" y2="20" stroke="#C9A87C" stroke-width="0.8" />
+                <path class="svg-draw" d="M250 6 L258 20 L250 34 L242 20 Z" stroke="#C9A87C" stroke-width="1.2"
+                    fill="none" />
+                <circle class="svg-draw" cx="250" cy="20" r="3" fill="#C9A87C" opacity="0.6" />
+                <path class="svg-draw" d="M220 20 L228 14 L236 20 L228 26 Z" stroke="#C9A87C" stroke-width="0.8"
+                    fill="none" opacity="0.5" />
+                <path class="svg-draw" d="M280 20 L272 14 L264 20 L272 26 Z" stroke="#C9A87C" stroke-width="0.8"
+                    fill="none" opacity="0.5" />
+                <circle class="svg-draw" cx="210" cy="20" r="2" fill="#C9A87C" opacity="0.4" />
+                <circle class="svg-draw" cx="290" cy="20" r="2" fill="#C9A87C" opacity="0.4" />
+            </svg>
+            <div class="cta-eyebrow reveal-item">The Collection</div>
+            <h2 class="cta-h2 reveal-item">"Experience the collection."</h2>
+            <p class="cta-sub reveal-item">Visit our showroom in Bengaluru or explore the full collection online.</p>
+            <div class="btn-row">
+                <a href="silverythm-collections.html" class="btn-primary reveal-item">Explore Collection</a>
+                <a href="https://wa.me/916364051237" target="_blank" rel="noopener" class="btn-whatsapp reveal-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Enquire on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer" style="padding: 6rem 2rem 3rem; background: transparent; border-top: 1px solid var(--border);">
+        <!-- Luxury Diamond Rule -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 4rem; opacity: 0.15;">
+            <div style="height: 1px; flex: 1; background: var(--accent);"></div>
+            <div style="width: 6px; height: 6px; transform: rotate(45deg); border: 1px solid var(--accent);"></div>
+            <div style="height: 1px; flex: 1; background: var(--accent);"></div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
+            <a href="index.html" style="display: inline-block;">
+                <img src="assets/Logo.png" alt="Silverhythm" style="height: 44px; width: auto;">
+            </a>
+            
+            <div style="display: flex; gap: 2.5rem; margin: 1rem 0;">
+                <a href="index.html?brand=silverythm" style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); opacity: 0.6; text-decoration: none;">Shop</a>
+                <a href="silverythm-collections.html" style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); opacity: 0.6; text-decoration: none;">Collection</a>
+                <a href="index.html#contact-section" style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); opacity: 0.6; text-decoration: none;">Contact</a>
+            </div>
+
+            <div style="height: 1px; width: 60px; background: var(--accent); opacity: 0.25;"></div>
+
+            <p style="font-size: 11px; letter-spacing: 0.1em; color: var(--text); opacity: 0.5; text-transform: uppercase;">© 2026 Silverhythm · Sacred Craftsmanship · Basavagudi | Jayanagar, Bengaluru</p>
+            
+            <a href="index.html" style="font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--accent); text-decoration: none; opacity: 0.8; transition: opacity 0.3s;">
+                ← Return to Home
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/ui/about.js?v=2"></script>
+</body>
+</html>

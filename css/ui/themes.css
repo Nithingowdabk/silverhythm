@@ -1,0 +1,76 @@
+/* css/ui/themes.css — Brand specific color palettes and theme variables (Light Default) */
+
+:root,
+body[data-brand="silverythm"],
+body[data-brand="silverythm"].light {
+    /* DEFAULT / SILVERHYTHM LIGHT */
+    --bg: #EDF4F8;
+    --surface: #6fa0bc;
+    --accent: #1B4963;
+    --text: #0A1E2D;
+    --muted: rgba(10, 30, 45, 0.50);
+    --border: rgba(27, 73, 99, 0.16);
+    --nav-bg: rgba(237, 244, 248, 0.96);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --accent-rgb: 27, 73, 99;
+}
+
+/* SILVERHYTHM DARK */
+body[data-brand="silverythm"]:not(.light) {
+    --bg: #032836; 
+    --surface: #064b61; /* Darker teal for premium depth */
+    --accent: #E5E5E5;
+    --text: #F0EAE0;
+    --muted: rgba(240, 234, 224, 0.42);
+    --border: rgba(6, 75, 97, 0.25);
+    --nav-bg: rgba(6, 75, 97, 0.98);
+}
+
+/* DEVARAMANE LIGHT */
+body[data-brand="devaramane"] {
+    --bg: #FDF6EC;
+    --surface: #FFFBF3;
+    --accent: #B8860B;
+    --accent-rgb: 184, 134, 11;
+    --text: #1A0C02;
+    --muted: rgba(26, 12, 2, 0.48);
+    --border: rgba(184, 134, 11, 0.20);
+    --nav-bg: rgba(253, 246, 236, 0.96);
+}
+
+/* DEVARAMANE DARK */
+body[data-brand="devaramane"]:not(.light) {
+    --bg: #1C1200;
+    --surface: #2E1F00;
+    --accent: #B8860B;
+    --accent-rgb: 184, 134, 11;
+    --text: #FDF6EC;
+    --muted: rgba(253, 246, 236, 0.45);
+    --border: rgba(184, 134, 11, 0.15);
+    --nav-bg: rgba(28, 18, 0, 0.97);
+}
+
+/* UDUGORE LIGHT */
+body[data-brand="udugore"] {
+    --bg: #F0EEF8;
+    --surface: #FFFFFF;
+    --accent: #7B68EE; /* Between Lavender and Navy Blue (MediumSlateBlue) */
+    --accent-rgb: 123, 104, 238;
+    --text: #080F28;
+    --muted: rgba(8, 15, 40, 0.5);
+    --border: rgba(123, 104, 238, 0.16);
+    --nav-bg: rgba(240, 238, 248, 0.97);
+}
+
+/* UDUGORE DARK */
+body[data-brand="udugore"]:not(.light) {
+    --bg: #020818;
+    --surface: #080F28;
+    --accent: #C9A84C; /* Gold */
+    --accent-rgb: 201, 168, 76;
+    --text: #F8F4EC;
+    --muted: rgba(248, 244, 236, 0.45);
+    --border: rgba(201, 168, 76, 0.13);
+    --nav-bg: rgba(2, 8, 24, 0.97);
+}

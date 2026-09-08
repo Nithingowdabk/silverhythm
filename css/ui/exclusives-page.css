@@ -1,0 +1,307 @@
+/* css/ui/exclusives-page.css — Redesigned Exclusives Page Styles with Lighter Theme & Contain Sizing */
+
+/* Override the coll-header's default bottom border — was causing the stray line */
+#exclusives-page .coll-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  background: transparent;
+}
+
+/* Hide eyebrow on the exclusives page */
+#exclusives-page .eyebrow {
+  display: none !important;
+}
+
+/* Intricate ornamental underline on the main heading */
+#exclusives-page .coll-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 28px;
+  margin-bottom: 12px;
+}
+
+#exclusives-page .coll-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 18px;
+  /* Ornamental SVG as a data-URI: two thin lines with a diamond jewel in the center */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 18' fill='none'%3E%3Cline x1='0' y1='9' x2='95' y2='9' stroke='%231B4963' stroke-width='0.8' stroke-linecap='round'/%3E%3Cline x1='125' y1='9' x2='220' y2='9' stroke='%231B4963' stroke-width='0.8' stroke-linecap='round'/%3E%3Cline x1='4' y1='12' x2='91' y2='12' stroke='%231B4963' stroke-width='0.4' stroke-linecap='round' opacity='0.45'/%3E%3Cline x1='129' y1='12' x2='216' y2='12' stroke='%231B4963' stroke-width='0.4' stroke-linecap='round' opacity='0.45'/%3E%3Cpolygon points='110,2 118,9 110,16 102,9' fill='%231B4963' opacity='0.85'/%3E%3Cpolygon points='110,5 115,9 110,13 105,9' fill='%23EDF4F8'/%3E%3Ccircle cx='96' cy='9' r='1.5' fill='%231B4963' opacity='0.6'/%3E%3Ccircle cx='124' cy='9' r='1.5' fill='%231B4963' opacity='0.6'/%3E%3Ccircle cx='88' cy='9' r='0.9' fill='%231B4963' opacity='0.35'/%3E%3Ccircle cx='132' cy='9' r='0.9' fill='%231B4963' opacity='0.35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+#exclusives-page {
+  min-height: 100vh;
+  background: var(--bg, #EDF4F8);
+  color: var(--text, #0A1E2D);
+  padding-top: 40px;
+  padding-bottom: 80px;
+  transition: background 0.45s ease, color 0.45s ease;
+}
+
+/* Category Sections */
+.ep-category-section {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.ep-category-section:first-of-type {
+  margin-top: 10px;
+}
+
+.ep-category-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ep-category-title {
+  font-family: var(--serif, 'Cormorant Garamond', serif);
+  font-size: 2.0rem;
+  font-weight: 400;
+  color: var(--accent, #1B4963);
+  margin: 0 0 10px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ep-category-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 280px;
+  margin: 0 auto;
+  opacity: 0.45;
+}
+
+.ep-category-divider .cfr-line {
+  flex: 1;
+  height: 1px;
+  background: var(--accent, #1B4963);
+}
+
+.ep-category-divider .cfr-diamond {
+  font-size: 10px;
+  color: var(--accent, #1B4963);
+  line-height: 1;
+}
+
+/* Exclusives Grid & Cards with premium borders mimicking collection items */
+.ep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 grid side-by-side on mobile */
+  gap: 16px; /* Elegant gap for mobile */
+  padding: 0;
+  background: transparent;
+  min-height: auto;
+}
+
+.ep-card {
+  background: #ffffff;
+  border: 1px solid rgba(27, 73, 99, 0.12);
+  box-shadow: 0 8px 30px rgba(27, 73, 99, 0.04);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: ep-card-in 0.5s ease forwards;
+}
+
+body.light .ep-card {
+  background: #ffffff;
+}
+
+@keyframes ep-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ep-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(27, 73, 99, 0.10);
+  border-color: rgba(27, 73, 99, 0.24);
+}
+
+.ep-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/5; /* Premium vertical aspect ratio for photo frames */
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px; /* Elegant white border padding around frame image */
+  border-bottom: 1px solid rgba(27, 73, 99, 0.08);
+  position: relative;
+}
+
+.ep-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* SHOWS ENTIRE IMAGE without any cropping! */
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ep-card:hover .ep-card-img {
+  transform: scale(1.04);
+}
+
+.ep-card-title {
+  padding: 14px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent, #1B4963); /* Accent brand navy */
+  font-family: var(--sans, 'DM Sans', sans-serif);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  background: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.ep-loading,
+.ep-empty {
+  text-align: center;
+  color: var(--accent, #1B4963);
+  opacity: 0.5;
+  padding: 80px 24px;
+  font-size: 14px;
+  font-family: var(--sans, 'DM Sans', sans-serif);
+  letter-spacing: 0.05em;
+}
+
+/* Premium Desktop Viewport Adaptations */
+@media (min-width: 768px) {
+  .ep-category-section {
+    margin: 64px auto;
+  }
+  
+  .ep-category-title {
+    font-size: 2.6rem;
+  }
+  
+  .ep-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns side-by-side on desktop */
+    gap: 24px;
+  }
+
+  .ep-card-title {
+    padding: 16px;
+    font-size: 11.5px;
+  }
+  
+  .ep-loading,
+  .ep-empty {
+    padding: 100px 0;
+  }
+}
+
+/* —— PREMIUM GLASSY LIGHTBOX —— */
+.ep-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 30, 45, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.light .ep-lightbox {
+  background: rgba(237, 244, 248, 0.92);
+}
+
+.ep-lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ep-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text, #0A1E2D);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.ep-lightbox-close:hover {
+  background: rgba(27, 73, 99, 0.08);
+  transform: rotate(90deg);
+}
+
+.ep-lightbox-close svg {
+  stroke: var(--text, #0A1E2D);
+}
+
+.ep-lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ep-lightbox.open .ep-lightbox-content {
+  transform: scale(1);
+}
+
+.ep-lightbox-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(10, 30, 45, 0.12);
+  border: 1px solid rgba(27, 73, 99, 0.12);
+  background: #ffffff;
+  padding: 16px;
+}
+
+#ep-lightbox-caption {
+  margin-top: 20px;
+  font-size: 13px;
+  font-family: var(--sans, 'DM Sans', sans-serif);
+  color: var(--text, #0A1E2D);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  transition: color 0.45s ease;
+}

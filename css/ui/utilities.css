@@ -1,0 +1,181 @@
+
+
+/* Only animate when element is visible */
+.anim-hidden {
+  opacity: 0 !important;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+
+.anim-hidden.in-view {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+/* Product card stagger entrance */
+.product-card.anim-hidden {
+  transform: translateY(16px) scale(0.98);
+}
+
+.product-card.anim-hidden.in-view {
+  transform: translateY(0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+    .anim-hidden,
+      .anim-fadeup,
+      .anim-fadein-left,
+      .anim-fadein-right,
+      .anim-scalein,
+      .hero-badge,
+      .hero-title,
+      .hero-desc,
+      .hero-actions,
+      .hero-img-wrap {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+}
+
+@media (max-width: 767px) {
+    .cart-badge-mobile.hidden {
+        display: none;
+      }
+}
+
+@media (max-width: 767px) {
+    .cart-badge-mobile.hidden {
+        display: none;
+      }
+}
+
+/* === UTILITIES === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- BRAND CLOSING TEXTURES --- */
+.peacock-texture {
+  background-image: url('../../assets/images/peacock-texture.webp');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.no-bg {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+.brand-bg-nav {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* --- TOAST & ACCESSIBILITY UTILITIES --- */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.badge-blur-9 {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  font-size: 9px !important;
+  padding: 4px 10px !important;
+}
+
+.badge-amber {
+  font-size: 10px !important;
+  background: #FEF3C7 !important;
+  color: #92400E !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  margin-left: 4px !important;
+}
+
+.status-pill {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 3px 9px !important;
+  border-radius: 20px !important;
+  text-transform: uppercase !important;
+}
+
+/* --- STATUS PILLS --- */
+.status-pill {
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  text-transform: capitalize !important;
+}
+
+.status-pill[data-status="delivered"] {
+  background: #f0fdf4 !important;
+  color: #16a34a !important;
+}
+
+.status-pill[data-status="pending"] {
+  background: #fffbeb !important;
+  color: #d97706 !important;
+}
+
+.status-pill[data-status="processing"] {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+.status-pill[data-status="cancelled"] {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+}
+
+.status-pill[data-status="confirmed"] {
+  background: #f0f9ff !important;
+  color: #0369a1 !important;
+}
+
+.status-pill[data-status="shipped"] {
+  background: #f5f3ff !important;
+  color: #7c3aed !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- VISIBILITY UTILITIES (At the end for maximum precedence) --- */
+.hidden-section {
+  display: none !important;
+}
+
+.visible-section {
+  display: block !important;
+}
+
+.flex-section {
+  display: flex !important;
+}

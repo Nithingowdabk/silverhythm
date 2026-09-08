@@ -1,0 +1,124 @@
+/* =======================================
+   FLOATING ACTION BUTTONS (Brand Unified)
+   ======================================= */
+@import "themes.css";
+
+#wa-fab, #instagram-fab, #enq-bubble {
+  position: fixed !important;
+  right: 20px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 12px rgba(27, 73, 99, 0.2) !important;
+}
+
+#wa-fab {
+  z-index: 9002 !important;
+  display: flex !important;
+}
+#instagram-fab {
+  z-index: 9001 !important;
+  display: flex !important;
+}
+#enq-bubble {
+  z-index: 9000 !important;
+}
+
+#wa-fab {
+  background: #25D366 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+#instagram-fab {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+#wa-fab svg, #instagram-fab svg, #enq-bubble svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+#wa-fab svg {
+  fill: #ffffff !important;
+  stroke: none !important;
+}
+
+#instagram-fab svg {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+
+#enq-bubble svg {
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+/* Mobile Positions */
+#enq-bubble {
+  bottom: calc(var(--bottom-nav-height, 56px) + var(--safe-bottom, 0px) + 20px) !important;
+}
+#instagram-fab {
+  bottom: calc(var(--bottom-nav-height, 56px) + var(--safe-bottom, 0px) + 74px) !important;
+}
+#wa-fab {
+  bottom: calc(var(--bottom-nav-height, 56px) + var(--safe-bottom, 0px) + 128px) !important;
+}
+
+/* Desktop Positions */
+@media (min-width: 768px) {
+  #wa-fab, #instagram-fab, #enq-bubble {
+    right: 24px !important;
+  }
+  #enq-bubble {
+    bottom: 24px !important;
+  }
+  #instagram-fab {
+    bottom: 80px !important;
+  }
+  #wa-fab {
+    bottom: 136px !important;
+  }
+}
+
+#wa-fab:hover {
+  transform: scale(1.15) translateY(-3px) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(37, 211, 102, 0.55) !important;
+}
+
+#instagram-fab:hover {
+  transform: scale(1.15) translateY(-3px) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(220, 39, 67, 0.55) !important;
+}
+
+#enq-bubble:hover {
+  transform: scale(1.15) translateY(-3px) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(6, 75, 97, 0.45) !important;
+}
+
+/* ── FAB OVERLAP FIX ──
+   The collection animation section (#brand-specific-section)
+   gets a higher z-index so it paints above the FABs.
+   FABs (z-index: 50) sit below it (z-index: 51) when in that section.
+   On all other sections, FABs are visible normally since those
+   sections don't have a z-index set.
+── */
+#brand-specific-section {
+  position: relative;
+  z-index: 51;
+}

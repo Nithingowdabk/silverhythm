@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /api/
+Disallow: /admin.php
+Disallow: /login.html
+Disallow: /uploads/
+Disallow: /scratch/
+Sitemap: https://silverhythm.com/sitemap.xml

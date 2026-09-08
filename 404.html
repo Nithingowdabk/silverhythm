@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silverhythm — Page Not Found</title>
+  <link rel="icon" href="/assets/Logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #032836;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      color: #F0EAE0;
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo:hover {
+      opacity: 1;
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,234,224,0.5);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(36px, 8vw, 64px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #F0EAE0;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #C9A87C;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(240,234,224,0.55);
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(201,168,124,0.35);
+      margin: 0 auto 40px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background: transparent;
+      border: 1px solid rgba(201,168,124,0.3);
+      color: #C9A87C;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background: rgba(201,168,124,0.05);
+      border-color: rgba(201,168,124,0.8);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 24px;
+      font-size: 11px;
+      color: rgba(240,234,224,0.2);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/"><img src="/assets/Logo.png" alt="Silverhythm" class="logo"></a>
+
+  <div class="eyebrow">Error 404</div>
+
+  <h1>Page Not <em>Found</em></h1>
+
+  <div class="divider"></div>
+
+  <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable while we are undergoing maintenance.</p>
+
+  <a href="/" class="action-btn">Return Home</a>
+
+  <div class="footer">© 2026 Silverhythm · Handcrafted in India</div>
+
+</body>
+</html>
