@@ -42,7 +42,7 @@ body.light {
   --gold-glow: #D4AF37;
   --gold-dark: #664608;
   --text: #091C28;
-  --muted: rgba(9, 28, 40, 0.68);
+  --muted: #2D3E50;
   --border: rgba(27, 73, 99, 0.18);
   --border-subtle: rgba(27, 73, 99, 0.08);
   --nav-bg: rgba(248, 251, 253, 0.95);
@@ -185,29 +185,55 @@ body.light .nav-back-icon {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #153247 0%, #081D2C 70%, #030C13 100%);
+  border: 1.5px solid rgba(201, 168, 76, 0.45);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 10px rgba(201, 168, 76, 0.15);
+  padding: 5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.nav-logo-link:hover {
+  transform: scale(1.06);
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4), 0 0 16px rgba(201, 168, 76, 0.25);
+}
+
+body.light .nav-logo-link {
+  background: radial-gradient(circle at 35% 30%, #17364D 0%, #081E2E 70%, #040F18 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.55);
+  box-shadow: 0 4px 16px rgba(184, 134, 11, 0.22), 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.light .nav-logo-link:hover {
+  border-color: #B8860B;
+  box-shadow: 0 6px 22px rgba(184, 134, 11, 0.38), 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-logo {
   display: block !important;
-  height: 48px;
-  max-height: 52px;
-  width: auto;
-  max-width: 170px;
+  height: 38px;
+  max-height: 40px;
+  width: 38px;
+  max-width: 40px;
   object-fit: contain;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-  filter: brightness(1.15) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  filter: brightness(1.15) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 body.light .nav-logo {
-  filter: brightness(0.08) contrast(1.25) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08)) !important;
+  filter: brightness(1.15) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) !important;
 }
 
 body.light .nav-logo:hover {
-  filter: brightness(0.15) sepia(0.6) hue-rotate(5deg) saturate(300%) contrast(1.2) drop-shadow(0 2px 6px rgba(184, 134, 11, 0.25)) !important;
+  filter: brightness(1.25) drop-shadow(0 2px 6px rgba(201, 168, 76, 0.4)) !important;
 }
 
 .nav-actions-desktop {
@@ -412,15 +438,35 @@ body.light .nav-mobile-btn:hover {
   color: var(--gold);
 }
 
+body.light .breadcrumb,
+body.light .breadcrumb a {
+  color: #334155;
+  font-weight: 500;
+}
+
+body.light .breadcrumb a:hover {
+  color: #B8860B;
+}
+
 .bc-sep {
   opacity: 0.4;
   color: var(--gold);
   font-size: 11px;
 }
 
+body.light .bc-sep {
+  color: #B8860B;
+  opacity: 0.65;
+}
+
 .bc-current {
   color: var(--text);
   font-weight: 600;
+}
+
+body.light .bc-current {
+  color: #091C28;
+  font-weight: 700;
 }
 
 /* ── Main Product Hero Showcase Grid ── */
@@ -1013,6 +1059,11 @@ body.light .detail-panel {
   line-height: 1.55;
 }
 
+body.light .detail-tagline {
+  color: #1E293B;
+  font-weight: 450;
+}
+
 /* Pricing Section */
 .detail-pricing-section {
   border-top: 1px solid var(--border);
@@ -1071,6 +1122,11 @@ body.light .detail-price {
   color: var(--muted);
   line-height: 1.5;
   letter-spacing: 0.01em;
+}
+
+body.light .detail-price-note {
+  color: #334155;
+  font-weight: 500;
 }
 
 /* ── Admin Craftsmanship & Sanctum Overview Box ── */
@@ -3546,10 +3602,17 @@ body.light .coll-footer-logo {
     padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
+  .nav-logo-link {
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+  }
+
   .nav-logo {
-    height: 40px !important;
-    max-height: 42px !important;
-    max-width: 135px !important;
+    height: 32px !important;
+    max-height: 34px !important;
+    width: 32px !important;
+    max-width: 34px !important;
   }
 
   .nav-back-btn {
@@ -4538,10 +4601,17 @@ body.light .coll-footer-logo {
     padding: 0 10px;
   }
 
+  .nav-logo-link {
+    width: 38px;
+    height: 38px;
+    padding: 3px;
+  }
+
   .nav-logo {
-    height: 35px !important;
-    max-height: 38px !important;
-    max-width: 110px !important;
+    height: 26px !important;
+    max-height: 28px !important;
+    width: 26px !important;
+    max-width: 28px !important;
   }
 
   .atelier-features-strip {
